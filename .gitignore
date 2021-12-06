@@ -1,10 +1,20 @@
+# Node Dependencies
+node_modules
 node_modules/
-.cache/
+yarn.lock
+
+# NPM Logs
+npm-debug.log
+*.log
+
+# Code Coverage Exports
+coverage.lcov
+coverage
+
+.cache
 public
 .idea
 .vscode
 .DS_Store
 .env
-*.log
-yarn.lock
 gatsby-node.old.js
