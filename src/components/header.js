@@ -57,12 +57,21 @@ const NavStyle = styled.nav`
   }
 `;
 
+const Logo = styled.span`
+  color: #B91646;
+  font-family: 'Amatic SC';
+  font-weight: 700;
+  font-size: 3rem;
+  margin-left: -5rem;
+`;
+
 const Header = ({ siteTitle }) => (
    <HeaderContainerStyle>
     <HeaderStyle>
-      <br/>
       <NavStyle>
         <ul>
+          <Logo>Sage AF</Logo>
+          <li><span>|</span></li>
           <li><Link to='/'>Home</Link></li>
           <li><span>|</span></li>
           <li><Link to='/signup'>Sign Up</Link></li>
