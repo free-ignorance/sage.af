@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksage_af=self.webpackChunksage_af||[]).push([[678],{7704:function(e,t,n){n.r(t);var a=n(7294),l=n(9),c=(n(5444),n(7198)),r=n(3751),u=l.default.div.withConfig({displayName:"pages__PreStyle",componentId:"sc-19d09pq-0"})(["a{text-decoration:none;color:#66cc66;}"]);t.default=function(){return a.createElement(c.Z,null,a.createElement(r.Z,{title:"Sage AF"}),a.createElement(u,null,a.createElement("br",null)))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-ac317f8d6d7b5b09d743.js.map
