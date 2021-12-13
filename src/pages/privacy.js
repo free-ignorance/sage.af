@@ -10,10 +10,26 @@ import SEO from '../components/seo';
  */
 
 const PreStyle = styled.div`
+
+	border: 1rem solid #DFD8CA;
+	padding: 2rem;
   a {
     text-decoration: none;
     color: #105652;
   }
+
+	p {
+		text-align: justify;
+  	text-justify: inter-word;
+		text-indent: 2rem;
+	}
+`;
+
+const StandOutFont = styled.h2`
+  color: #B91646;
+  font-family: 'Amatic SC';
+  font-weight: 700;
+  font-size: 2rem;
 `;
 
 const PrivacyPage = () => (
@@ -21,8 +37,8 @@ const PrivacyPage = () => (
     <SEO title='Sage AF - Your Privacy Matters' />
     <PreStyle>
       <br/>
-			<p>The Collection of your data is entered into shopify system for shipping and tracking only. We are not a business that is accepting public orders at this time, and intend to destroy all customer generated accounts 30 days after orders have been completed and or by the Feb 20th 2022 Cutoff date. On Feb 20th 2022 all customer information and order information will be removed from the shop, and the shop will be reset.</p>
-			<p>Our API transmits data oneway into shopify, and follows secure transport end to end. Our datapolicy is the <a href='https://www.patheos.com/blogs/wakeupcall/2017/07/sage-advice-from-the-14th-dalai-lama/'>don't be a jerk</a> policy.</p>
+			<StandOutFont>Your Privacy Matters</StandOutFont>
+			<p>Nope. We collect almost no personal data from our users, and what we do collect, we delete after we ship items. The Collection of your data is entered into shopify system for shipping and tracking only. We are not a business that is accepting public orders at this time, and intend to destroy all customer generated accounts 30 days after orders have been completed and or by the Feb 20th 2022 Cutoff date. On Feb 20th 2022 all customer information and order information will be removed from the shop, and the shop will be reset. Our API transmits data oneway into shopify, and follows secure transport end to end. Our datapolicy is the <a href='https://www.patheos.com/blogs/wakeupcall/2017/07/sage-advice-from-the-14th-dalai-lama/'>don't be a jerk</a> policy.</p>
 			<p>Your Account and Data Can be deleted after signup at anypoint on our <Link to='/optout'>Delete Account Page</Link>, which will delete all customer information from the shopify shop, and remove your email from future promotions.</p>
 		</PreStyle>
   </Layout>
