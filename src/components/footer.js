@@ -20,9 +20,14 @@ const FooterStyle = styled.footer`
   }
 `;
 
+const StandOutFont = styled.span`
+  color: #B91646;
+	padding-right: 0.5rem;
+`;
+
 const Footer = () => (
   <FooterStyle>
-    © {new Date().getFullYear()}
+    <StandOutFont>Sage AF </StandOutFont> © {new Date().getFullYear()}
   </FooterStyle>
 );
 
