@@ -18,6 +18,7 @@ const SignupPage = () => (
     <PreStyle>
       <br/>
 			<p>Would you like a gift?</p>
+      <p>You can view our <Link to='/privacy'>privacy statement</Link>.</p>
 
     </PreStyle>
   </Layout>
