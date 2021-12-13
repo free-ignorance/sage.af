@@ -62,7 +62,6 @@ const Logo = styled.span`
   font-family: 'Amatic SC';
   font-weight: 700;
   font-size: 3rem;
-  margin-left: -5rem;
 `;
 
 const Header = ({ siteTitle }) => (

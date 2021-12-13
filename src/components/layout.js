@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled,{ createGlobalStyle }  from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
-// import Footer from './footer';
+import Footer from './footer';
 import './layout.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -52,6 +52,7 @@ const Layout = ({ children }) => {
       <LayoutStyle>
       <Header/>
         <main>{children}</main>
+      <Footer/>
       </LayoutStyle>
     </LayoutContainerStyle>
 
