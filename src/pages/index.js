@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 const PreStyle = styled.div`
   a {
     text-decoration: none;
-    color: #66cc66;
+    color: #105652;
   }
 `;
 

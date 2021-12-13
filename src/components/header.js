@@ -13,7 +13,7 @@ const HeaderStyle = styled.div`
   width: 100%;
   a {
     text-decoration: none;
-    color: #66cc66;
+    color: #105652;
   }
   nav {
     margin: auto;
@@ -45,7 +45,7 @@ const NavStyle = styled.nav`
     padding: 0.3rem;
     display:inline;
     span {
-      color: #eff6ee;
+      color: #B91646;
     }
   }
   @media only screen and (min-width: 768px) {
@@ -61,14 +61,13 @@ const Header = ({ siteTitle }) => (
    <HeaderContainerStyle>
     <HeaderStyle>
       <br/>
-      <!-- LOGO --!>
       <NavStyle>
         <ul>
-          <li><Link to='/'>~/</Link></li>
+          <li><Link to='/'>Home</Link></li>
           <li><span>|</span></li>
-          <li><Link to='/signup'>signup</Link></li>
+          <li><Link to='/signup'>Sign Up</Link></li>
           <li><span>|</span></li>
-          <li><Link to='/about'>about</Link></li>
+          <li><Link to='/about'>All About Us</Link></li>
         </ul>
       </NavStyle>
     </HeaderStyle>

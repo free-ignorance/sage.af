@@ -9,13 +9,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled,{ createGlobalStyle }  from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-// import Header from './header';
+import Header from './header';
 // import Footer from './footer';
 import './layout.css';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #051120;
+    background-color: #FBF3E4;
   }
 `;
 
@@ -25,7 +25,7 @@ const LayoutContainerStyle = styled.div`
   margin-top:
   margin: 0;
   padding: 0;
-  background-color: #051120;
+  background-color: #FBF3E4;
   position: relative;
   text-align: center;
 `;
@@ -34,7 +34,7 @@ const LayoutStyle = styled.div`
   margin: auto;
   width: 100%;
   font-size: 10px;
-  background-color: #051120;
+  background-color: #FBF3E4;
 
   @media only screen and (min-width: 768px) {
     font-size: 16px;
@@ -58,6 +58,7 @@ const Layout = ({ children }) => {
     <LayoutContainerStyle>
     <GlobalStyle/>
       <LayoutStyle>
+      <Header/>
         <main>{children}</main>
       </LayoutStyle>
     </LayoutContainerStyle>
