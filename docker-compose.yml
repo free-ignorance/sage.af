@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  sage-af-site:
+    container_name: sage
+    build: .
+    command: ["npm", "run", "start-dev"]
+    ports:
+      - "3431:3431"
+    volumes:
+      - ${PWD}:/var/www:delegated
