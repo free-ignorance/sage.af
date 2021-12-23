@@ -11,7 +11,7 @@ import SEO from '../components/seo';
 
 const PreStyle = styled.div`
 
-	border: 1rem solid #DFD8CA;
+	border: 0.5rem solid #DFD8CA;
 	padding: 2rem;
   a {
     text-decoration: none;
