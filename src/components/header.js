@@ -7,6 +7,10 @@ const HeaderContainerStyle = styled.div`
   position: relative;
   text-align: center;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: thin solid rgb(223, 216, 202);
+
+
 `;
 
 const HeaderStyle = styled.div`
@@ -20,10 +24,6 @@ const HeaderStyle = styled.div`
     font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
     line-height: 1.1 rem;
     text-shadow: 0 0 2px rgba(100,100,100,0.5);
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 16px;
-    width: 40rem;
   }
 `;
 
@@ -69,9 +69,11 @@ const Header = ({ siteTitle }) => (
     <HeaderStyle>
       <NavStyle>
         <ul>
-          <Logo>Sage AF</Logo>
+          <li><Link to='/'><Logo>Sage AF</Logo></Link></li>
           <li><span>|</span></li>
-          <li><Link to='/'>Home</Link></li>
+          <li>
+            <Link to='/collection'>Essentials</Link>
+          </li>
           <li><span>|</span></li>
           <li><Link to='/signup'>Sign Up</Link></li>
           <li><span>|</span></li>
@@ -87,7 +89,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Sage AF - Disrupting your Chakras`,
 }
 
 export default Header

@@ -3,41 +3,26 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Form from '../components/form';
-
-
+import Create from '../components/account/create';
 
 const PreStyle = styled.div`
-	border: 1rem solid #DFD8CA;
-	padding: 2rem;
-  a {
-    text-decoration: none;
-    color: #105652;
+  margin: auto;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    width: 40rem;
   }
-
-	p lable {
-		text-align: justify;
-  	text-justify: inter-word;
-		text-indent: 2rem;
-	}
-`;
-
-const StandOutFont = styled.h2`
-  color: #B91646;
-  font-family: 'Amatic SC';
-  font-weight: 700;
-  font-size: 2rem;
 `;
 
 const SignupPage = () => (
   <Layout>
     <SEO title='Sage AF - Signup Page' />
     <PreStyle>
-      <br/>
-			<p>Would you like a gift?</p>
-      <Form/>
-      <p>You can view our <Link to='/privacy'>privacy statement</Link>.</p>
-
+      <h2>Want to try us out?</h2>
+      <p>Sage.af is looking for perspective users to give free gifts to. We would like you to sign up and in 1 week you will get to assemble your own gift pack totall free. We only ask you let us know how it was.</p>
+      <Create/>
     </PreStyle>
   </Layout>
 )

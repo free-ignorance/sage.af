@@ -6,39 +6,28 @@ import SEO from '../components/seo';
 
 
 const PreStyle = styled.div`
+  margin: auto;
+  margin-bottom: 1rem;
+	text-align: center;
 
-	border: 1rem solid #DFD8CA;
-	padding: 2rem;
-  a {
-    text-decoration: none;
-    color: #105652;
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    width: 40rem;
   }
-
-	p {
-		text-align: justify;
-  	text-justify: inter-word;
-		text-indent: 2rem;
-	}
-`;
-
-const StandOutFont = styled.h2`
-  color: #B91646;
-  font-family: 'Amatic SC';
-  font-weight: 700;
-  font-size: 2rem;
 `;
 
 const AboutPage = () => (
   <Layout>
     <SEO title='Sage AF - All About Us' />
     <PreStyle>
-      <br/>
-			<StandOutFont>All About Us</StandOutFont>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
-			<StandOutFont>Our Story</StandOutFont>
-			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p>
-			<StandOutFont>Let Us Know What you Think</StandOutFont>
-			<p>Contact Us Page</p>
+			<h2>All About Us</h2>
+			<p>We are a Calm Cool Collective focusing on spiritual healing and wellness products. Shop our curated homemade products, beauty picks, and all our wellness essentials. Our incredibly high standards prevent us from making profits, but that doesn't mean you can't enjoy our creations with us. We absolutly do not do designer brands but create everyday essentials.</p>
+			<h1>Our Journey</h1>
+			<p>copy</p>
+			<h2>Want to Try us out?</h2>
+			<p>Currently we are still looking for spiritually like minded people to give free gifts to. We would like you to sign up and in 1 week you will get to assemble your own gift pack totall free. <Link to='/signup'>Sign up here!</Link></p>
+			<h2>Let Us Know What you Think</h2>
+			<p>We only ask you let us know how it was by going over to our <Link to='/signup'>Feed Back Page</Link>.</p>
 	  </PreStyle>
   </Layout>
 )

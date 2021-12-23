@@ -6,6 +6,11 @@ import Header from './header';
 import Footer from './footer';
 import './layout.css';
 
+const GLOBAL_BACKGROUND_COLOR = '#fdfaf5';
+const GLOBAL_LINK_COLOR = '#105652';
+const GLOBAL_PRIMARY_ACCENT_COLOR = '#B91646';
+const GLOBAL_SECONDARY_ACCENT_COLOR = '#105652';
+
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: #FBF3E4;
@@ -13,26 +18,47 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const LayoutContainerStyle = styled.div`
+  font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+  background-color: ${GLOBAL_BACKGROUND_COLOR};
   width: 100%;
   height: 100%;
-  margin-top:
   margin: 0;
   padding: 0;
-  background-color: #FBF3E4;
   position: relative;
-  text-align: center;
+
+
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    text-indent: 1.5rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    text-shadow: 0 0 2px rgba(100,100,100,0.5);
+  }
+
+  h1 {
+    color: ${GLOBAL_PRIMARY_ACCENT_COLOR};
+    font-size: 3rem;
+  }
+
+  h2 {
+    color: ${GLOBAL_SECONDARY_ACCENT_COLOR};
+    font-size: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${GLOBAL_LINK_COLOR};
+  }
 `;
 
 const LayoutStyle = styled.div`
   margin: auto;
   width: 100%;
-  font-size: 10px;
-  background-color: #FBF3E4;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 16px;
-    width: 40rem;
-  }
+  background-color: ${GLOBAL_BACKGROUND_COLOR};
+  font-size: 16px;
 `;
 
 const Layout = ({ children }) => {
@@ -55,7 +81,6 @@ const Layout = ({ children }) => {
       <Footer/>
       </LayoutStyle>
     </LayoutContainerStyle>
-
   )
 }
 
