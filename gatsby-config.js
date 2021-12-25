@@ -5,7 +5,21 @@ module.exports = {
     author: `@katelibby`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+   process.env.GOOGLE_ANALYTICS_ID && {
+	          resolve: "gatsby-plugin-google-analytics",
+	          options: {
+			          trackingId: process.env.GOOGLE_ANALYTICS_ID,
+			        },
+	        },
+	  {
+      resolve: "gatsby-source-shopify",
+      options: {
+        password: process.env.SHOPIFY_SHOP_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+        shopifyConnections: ["collections"],
+      },
+    },
+	`gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
