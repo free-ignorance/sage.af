@@ -95,7 +95,7 @@ class TextInputField extends Component {
 	};
 
   render() {
-		const { name, placeholder, value, label, active, valid } = this.props;
+		const { name, placeholder, value, label,pattern, active, valid } = this.props;
 		const { isValid, isActive } = this.state;
 
 		const LabelStyle = styled.label`
@@ -133,7 +133,6 @@ class TextInputField extends Component {
 							type="text"
 							name={name}
 							placeholder={placeholder}
-							pattern=""
 							onChange={this.handleInputChange}
 							onFocus={this.handleInputFocus}
 							onBlur={this.handleInputBlur}

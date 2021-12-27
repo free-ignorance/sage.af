@@ -9,3 +9,9 @@ coverage.lcov
 coverage
 
 .cache
+
+# Gatsby Junk
+.env
+public
+gatsby-node.old.js
+*.log
