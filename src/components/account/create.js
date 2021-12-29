@@ -83,6 +83,7 @@ const ButtonContainer = styled.div`
 
 class Create extends Component {
   constructor(props) {
+
     super(props);
     this.state = {
       firstName: props.firstName,
@@ -96,6 +97,7 @@ class Create extends Component {
       isLoaded: false,
       items: []
     };
+		this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange = (event) => {
@@ -107,19 +109,34 @@ class Create extends Component {
     })
   }
 
-	handleSubmit = (data) => {
-		console.log(data);
-		fetch(`https://veneer-prod.herokuapp.com/user/create`, {
-		method: `POST`,
-		body: {},
-		headers: {
-			"content-type": `application/json`,
-		},
-		})
-		.then(res => res.json())
-		.then(body => {
-			console.log(`response from API:`, body)
-		})
+	handleSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			await fetch(
+				`https://veneer-prod.herokuapp.com/user/create`,
+				{
+					method: `POST`,
+					body: {
+						firstName: this.state.firstName,
+						lastName: this.state.lastName,
+						addressOne: this.state.addressOne,
+						addressTwo: this.state.addressTwo,
+						addressState: this.state.addressState,
+						addressZip: this.state.addressZip,
+						addressCountry: this.state.addressCountry,
+					},
+					headers: {
+						"content-type": `application/json`,
+					},
+				})
+			.then(res => res.json())
+			.then(body => {
+				console.log(`response from API:`, body)
+			})
+		} catch (e) {
+			console.log(`response from API:${e}`)
+		}
+
 	}
 
   render() {
