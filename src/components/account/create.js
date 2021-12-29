@@ -108,9 +108,10 @@ class Create extends Component {
   }
 
 	handleSubmit = (data) => {
+		console.log(data);
 		fetch(`https://veneer-prod.herokuapp.com/user/create`, {
 		method: `POST`,
-		body: JSON.stringify(data),
+		body: {},
 		headers: {
 			"content-type": `application/json`,
 		},
