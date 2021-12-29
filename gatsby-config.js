@@ -5,6 +5,7 @@ module.exports = {
     title: `sage.af`,
     description: ``,
     author: `@katelibby`,
+    siteUrl: "http://sage.af",
   },
   plugins: [
    process.env.GOOGLE_ANALYTICS_ID && {
@@ -36,7 +37,7 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     {
       resolve: `gatsby-plugin-manifest`,
-      
+
       options: {
         name: `sage.af`,
         short_name: `starter`,
