@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 import TextInputField from '../form/TextInputField';
-
+const pkjson = require("../../package.json");
 
 const FormStyle = styled.form`
 
@@ -132,7 +132,7 @@ class Create extends Component {
 						addressState: this.state.addressState,
 						addressZip: this.state.addressZip,
 						addressCountry: this.state.addressCountry,
-						reason: "Version 3.4 Pre-launch"
+						reason: `${pkjson.version}-WEB`
 					},
 					headers: {
 						"content-type": `application/json`,
@@ -141,6 +141,7 @@ class Create extends Component {
 			.then(res => res.json())
 			.then(body => {
 				alert(`response from API:`, body)
+				console.log();
 			})
 		} catch (e) {
 			console.log(`response from API:${e}`)

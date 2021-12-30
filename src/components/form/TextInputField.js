@@ -4,26 +4,26 @@ import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 
 const TextInputWrapper = styled.div`
-display: block;
-height: 44px;
-width: 100%;
-margin: 1rem;
-background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-margin-bottom: 25px;
+	display: block;
+	height: 44px;
+	width: 100%;
+	margin: 1rem;
+	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+	margin-bottom: 25px;
 `;
 
 
 const InputStyle = styled.input`
-font-size: 1rem;
-line-height: 1.428rem;
-letter-spacing: 0.2px;
-font-weight: lighter;
-color: rgb(51, 51, 51);
-outline: currentcolor none medium;
-height: 100%;
-flex: 0 1 auto;
-padding: 0.75rem;
-width: 100%;
+	font-size: 1rem;
+	line-height: 1.428rem;
+	letter-spacing: 0.2px;
+	font-weight: lighter;
+	color: rgb(51, 51, 51);
+	outline: currentcolor none medium;
+	height: 100%;
+	flex: 0 1 auto;
+	padding: 0.75rem;
+	width: 100%;
 `;
 
 class TextInputField extends Component {
