@@ -74,6 +74,7 @@ const SubmitButton = styled.button`
 	display: inline-block;
 	font-size: 16px;
 	padding: 1rem;
+	cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
@@ -108,6 +109,13 @@ class Create extends Component {
       [name]: value,
     })
   }
+	submitSuccess = async () => {
+
+	}
+
+	submitFailure = async () => {
+
+	}
 
 	handleSubmit = async (event) => {
 		event.preventDefault();
@@ -124,6 +132,7 @@ class Create extends Component {
 						addressState: this.state.addressState,
 						addressZip: this.state.addressZip,
 						addressCountry: this.state.addressCountry,
+						reason: "Version 3.4 Pre-launch"
 					},
 					headers: {
 						"content-type": `application/json`,
@@ -131,12 +140,11 @@ class Create extends Component {
 				})
 			.then(res => res.json())
 			.then(body => {
-				console.log(`response from API:`, body)
+				alert(`response from API:`, body)
 			})
 		} catch (e) {
 			console.log(`response from API:${e}`)
 		}
-
 	}
 
   render() {
@@ -236,7 +244,7 @@ class Create extends Component {
 							type="text"
 							label="Zip Code"
 							name="addressZip"
-							placeholder={this.state.addressZip}
+							placeholder="10023"
 						/>
 					</InputContainer>
 					<InputContainer>
