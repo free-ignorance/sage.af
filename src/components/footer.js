@@ -62,6 +62,14 @@ const StandOutFont = styled.span`
   font-size: 1.2rem;
 `;
 
+const VersionStyle = styled.div`
+  font-size: 0.8rem;
+  color: #105652;
+  font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+  line-height: 1.1 rem;
+  text-shadow: 0 0 2px rgba(100,100,100,0.5);
+`;
+
 const Footer = () => (
   <FooterContainerStyle>
     <FooterStyle>
@@ -73,7 +81,7 @@ const Footer = () => (
         <li><Link to='/privacy'>Privacy Policy</Link></li>
       </ul>
       <div>© {new Date().getFullYear()}<StandOutFont>Sage AF</StandOutFont>LLC. All Rights Reserved</div>
-      <div>v${pkjson.version}-WEB</div>
+      <VersionStyle>v{pkjson.version}-WEB</VersionStyle>
     </FooterStyle>
   </FooterContainerStyle>
 );
