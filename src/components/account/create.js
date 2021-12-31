@@ -137,7 +137,7 @@ class Create extends Component {
 				{
 					method: `POST`,
 					headers: { "Content-Type": "application/x-www-form-urlencoded" },
-					body: JSON.stringify(...user)
+					body: JSON.stringify(user)
 				})
 			.then(res => {
 				const body = res.json();
