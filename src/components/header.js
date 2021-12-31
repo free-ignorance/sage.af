@@ -70,10 +70,10 @@ const Header = ({ siteTitle }) => (
       <NavStyle>
         <ul>
           <li><Link to='/'><Logo>Sage AF</Logo></Link></li>
-          <li><span>|</span></li>
+          {/* <li><span>|</span></li>
           <li>
             <Link to='/collection'>Essentials</Link>
-          </li>
+          </li> */}
           <li><span>|</span></li>
           <li><Link to='/signup'>Sign Up</Link></li>
           <li><span>|</span></li>
