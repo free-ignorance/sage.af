@@ -5,16 +5,24 @@ import SEO from "../components/seo";
 import Create from "../components/account/create";
 
 const PreStyle = styled.div`
-  padding-right: 1rem;
-  padding-left: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-witdh: 36rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    width: 36rem;
+  }
 `;
 
 const SignupPage = () => (
   <Layout>
     <SEO
-    title="Sage AF - Signup Page"
-    description="Sign up here for some free homemade essentials. All options are free of charged & will be shipped free to your provided address. "
-    meta={[]}
+      title="Sage AF - Signup Page"
+      description="Sign up here for some free homemade essentials. All options are free of charged & will be shipped free to your provided address."
     />
     <PreStyle>
       <h2>Want to try us out?</h2>

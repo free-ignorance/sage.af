@@ -12,19 +12,22 @@ const PreStyle = styled.div`
   margin: auto;
   margin-bottom: 1rem;
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-witdh: 36rem;
 
   @media only screen and (min-width: 768px) {
     font-size: 16px;
-    width: 40rem;
+    width: 36rem;
   }
 `;
 
 const PrivacyPage = () => (
   <Layout>
     <SEO
-    title="Sage AF - Your Privacy Matters"
-    description="We do not sell, trade, or rent your personal information to others; read our whole privacy policy to know just how much you matter to us."
-    meta={[]}
+      title="Sage AF - Your Privacy Matters"
+      description="We do not sell, trade, or rent your personal information to others; read our whole privacy policy to know just how much you matter to us."
+      meta={[]}
     />
     <PreStyle>
       <br/>

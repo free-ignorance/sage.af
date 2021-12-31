@@ -4,28 +4,22 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-
 const PreStyle = styled.div`
   margin: auto;
   margin-bottom: 1rem;
-	text-align: center;
-	p {
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-witdh: 36rem;
 
   @media only screen and (min-width: 768px) {
     font-size: 16px;
-			width: 38rem;
-		p {
-			width: 36rem;
-		}
+    width: 36rem;
   }
 `;
 
 const AboutPage = () => (
   <Layout>
-    <SEO title='Sage AF - All About Us' />
 		<SEO
 			title="Sage AF - All About Us"
 			description="We are a Calm Cool Collective focusing on spiritual healing and wellness products. Our curated shop has a selection of homemade products, beauty picks, and wellness essentials. Our high standards prevent us from making profits, as we just want you to feel good about you. Pick an assortment to enjoy on us!"
