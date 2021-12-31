@@ -129,17 +129,15 @@ class Create extends Component {
 					addressState: this.state.addressState,
 					addressZip: this.state.addressZip,
 					addressCountry: this.state.addressCountry,
-					reason: `v${pkjson.version}-WEB`
+					reason: `v${pkjson.version}-WEB`,
+					"form-name": "newUser",
 				};
 			await fetch(
 				`https://veneer-prod.herokuapp.com/user/create`,
 				{
 					method: `POST`,
 					headers: { "Content-Type": "application/x-www-form-urlencoded" },
-					body: ({
-						"form-name": "newUser",
-						...user
-					})
+					body: JSON.stringify(...user)
 				})
 			.then(res => {
 				const body = res.json();
