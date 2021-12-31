@@ -21,7 +21,11 @@ const PreStyle = styled.div`
 
 const PrivacyPage = () => (
   <Layout>
-    <SEO title='Sage AF - Your Privacy Matters' />
+    <SEO
+    title="Sage AF - Your Privacy Matters"
+    description="We do not sell, trade, or rent your personal information to others; read our whole privacy policy to know just how much you matter to us."
+    meta={[]}
+    />
     <PreStyle>
       <br/>
 			<h2>Your Privacy Matters</h2>

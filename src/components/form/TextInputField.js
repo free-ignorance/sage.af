@@ -12,7 +12,6 @@ const TextInputWrapper = styled.div`
 	margin-bottom: 25px;
 `;
 
-
 const InputStyle = styled.input`
 	font-size: 1rem;
 	line-height: 1.428rem;
