@@ -102,13 +102,12 @@ class Create extends Component {
   }
 
   handleInputChange = (event) => {
-    const target = event.target;
-    const {name, value}  = target;
-
+    const { name, value } = event.target;
     this.setState({
       [name]: value,
     })
   }
+
 	submitSuccess = async () => {
 
 	}
@@ -141,8 +140,8 @@ class Create extends Component {
 				})
 			.then(res => {
 				const body = res.json();
-				alert(`response from API:`, body)
-				console.log();
+				alert(`response from API: ${body}`);
+				console.log(`response from API: ${body}`);
 			})
 		} catch (e) {
 			console.log(`response from API:${e}`)
@@ -158,27 +157,31 @@ class Create extends Component {
 						name="firstName"
 						label="First Name"
 						placeholder="First Name"
+						onChange={this.handleInputChange}
 					/>
-					</InputContainer>
-					<InputContainer>
-						<TextInputField
-								name="lastName"
-								label="Last Name"
-								placeholder="Last Name"
-							/>
-					</InputContainer>
-					<InputContainer>
-						<TextInputField
-							name="addressOne"
-							label="Address One"
-							placeholder="Address Line 1"
-							/>
-					</InputContainer>
-					<InputContainer>
-						<TextInputField
+				</InputContainer>
+				<InputContainer>
+					<TextInputField
+						name="lastName"
+						label="Last Name"
+						placeholder="Last Name"
+						onChange={this.handleInputChange}
+						/>
+				</InputContainer>
+				<InputContainer>
+					<TextInputField
+						name="addressOne"
+						label="Address One"
+						placeholder="Address Line 1"
+						onChange={this.handleInputChange}
+						/>
+				</InputContainer>
+				<InputContainer>
+					<TextInputField
 							name="addressTwo"
 							label="Address Two"
 							placeholder="Address Line 2"
+							onChange={this.handleInputChange}
 							/>
 					</InputContainer>
 					<InputContainer>
@@ -257,12 +260,12 @@ class Create extends Component {
 							placeholder="212-555-1234"
 							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 						/>
-							<TextInputField
-								type="text"
-								name="email"
-								label="Email"
-								placeholder="Email"
-							/>
+						<TextInputField
+							type="text"
+							name="email"
+							label="Email"
+							placeholder="Email"
+						/>
 				</InputContainer>
 				<ButtonContainer>
 					<SubmitButton>Yes Send me a Gift</SubmitButton>
