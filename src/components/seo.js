@@ -60,6 +60,10 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
         //   content: site.siteMetadata.keywords.join(","),
         // },
         {
+          property: `og:site_name`,
+          content: `Sage AF`,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -72,16 +76,28 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: `https://sage.af`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:url`,
+          content: `https://sage.af`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
         },
         {
           name: `twitter:description`,

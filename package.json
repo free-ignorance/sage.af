@@ -16,7 +16,12 @@
     "url": "git+https://github.com/free-ignorance/sage.af.git"
   },
   "keywords": [],
-  "contributors": "Beau Bouchard",
+  "contributors": [
+    {
+      "name": "Sage",
+      "email": ""
+    }
+  ],
   "license": "GNU",
   "bugs": {
     "url": "https://github.com/free-ignorance/sage.af/issues"

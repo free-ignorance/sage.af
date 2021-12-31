@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const LayoutContainerStyle = styled.div`
+  width: 100%;
+
   font-family: "Source Code Pro", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
   background-color: ${GLOBAL_BACKGROUND_COLOR};
   width: 100%;
@@ -56,7 +58,6 @@ const LayoutContainerStyle = styled.div`
 `;
 
 const LayoutStyle = styled.div`
-  margin: auto;
   width: 100%;
   background-color: ${GLOBAL_BACKGROUND_COLOR};
   font-size: 16px;

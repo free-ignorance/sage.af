@@ -106,4 +106,22 @@ const Footer = () => (
   </FooterContainerStyle>
 );
 
+const NewFooter = () => (
+  <FooterContainerStyle>
+    <FooterNavStyle>
+      <ul>
+        <li><a href="#">Terms of Use</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><span>|</span></li>
+        <li><Link to="/privacy">Privacy Policy</Link></li>
+      </ul>
+      <p> </p>
+      <CopyRightStyleVersionStyle>Client v{pkjson.version}</CopyRightStyleVersionStyle>
+      <CopyRightStyleVersionStyle>© {new Date().getFullYear()} <StandOutFont>Sage AF</StandOutFont> LLC. All Rights Reserved</CopyRightStyleVersionStyle>
+      <p> </p>
+    </FooterNavStyle>
+  </FooterContainerStyle>
+);
+
 export default Footer
