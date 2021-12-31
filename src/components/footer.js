@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+const pkjson = require("../../package.json");
 
 const FooterContainerStyle = styled.div`
   border-top: thin solid rgb(223, 216, 202);
@@ -72,6 +73,7 @@ const Footer = () => (
         <li><Link to='/privacy'>Privacy Policy</Link></li>
       </ul>
       <div>© {new Date().getFullYear()}<StandOutFont>Sage AF</StandOutFont>LLC. All Rights Reserved</div>
+      <div>v${pkjson.version}-WEB</div>
     </FooterStyle>
   </FooterContainerStyle>
 );

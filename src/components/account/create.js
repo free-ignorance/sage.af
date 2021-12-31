@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 import TextInputField from '../form/TextInputField';
-const pkjson = require("../../package.json");
+const pkjson = require("../../../package.json");
 
 const FormStyle = styled.form`
 
@@ -119,27 +119,30 @@ class Create extends Component {
 
 	handleSubmit = async (event) => {
 		event.preventDefault();
+
 		try {
+			const user = {
+					firstName: this.state.firstName,
+					lastName: this.state.lastName,
+					addressOne: this.state.addressOne,
+					addressTwo: this.state.addressTwo,
+					addressState: this.state.addressState,
+					addressZip: this.state.addressZip,
+					addressCountry: this.state.addressCountry,
+					reason: `v${pkjson.version}-WEB`
+				};
 			await fetch(
 				`https://veneer-prod.herokuapp.com/user/create`,
 				{
 					method: `POST`,
-					body: {
-						firstName: this.state.firstName,
-						lastName: this.state.lastName,
-						addressOne: this.state.addressOne,
-						addressTwo: this.state.addressTwo,
-						addressState: this.state.addressState,
-						addressZip: this.state.addressZip,
-						addressCountry: this.state.addressCountry,
-						reason: `${pkjson.version}-WEB`
-					},
-					headers: {
-						"content-type": `application/json`,
-					},
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+					body: ({
+						"form-name": "newUser",
+						...user
+					})
 				})
-			.then(res => res.json())
-			.then(body => {
+			.then(res => {
+				const body = res.json();
 				alert(`response from API:`, body)
 				console.log();
 			})
