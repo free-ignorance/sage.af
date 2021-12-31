@@ -95,18 +95,40 @@ const ViewPortHeader = styled.div`
         />
 **/
 
+
 class VideoHeader extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: false,
+      error: null,
+      isLoaded: false,
+      items: []
+    };
 	}
-	  render() {
+
+  handleOnLoadStart = (event) => {
+    console.log("I am starting to load...");
+    this.setState({isLoading: true});
+  }
+
+  handleOnLoadEnd = (event) => {
+    console.log("I am done loading...");
+    this.setState({isLoading: false});
+    this.setState({isLoading: true});
+  }
+
+  render() {
     return (
       <StyledHeader>
         <VideoStyle
-            autoplay="true"
-            playsinline
-            muted
-            loop="true"
+          loop
+          muted
+          autoPlay
+          preload={'auto'}
+          type={'video/mp4'}
+          onLoadStart={this.handleOnLoadStart}
+          onLoadEnd={this.handleOnLoadEnd}
           >
           <source
             src={this.props.src}
@@ -118,7 +140,7 @@ class VideoHeader extends Component {
           <h1>{this.props.title}</h1>
         </ViewPortHeader>
       </StyledHeader>
-		)
+    )
 	}
 }
 
