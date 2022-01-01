@@ -118,6 +118,10 @@ class VideoHeader extends Component {
     this.setState({isLoading: true});
   }
 
+  handleOnPlaying = (event) => {
+    event.play();
+  }
+
   render() {
     return (
       <StyledHeader>
@@ -125,6 +129,7 @@ class VideoHeader extends Component {
           loop
           muted
           autoPlay
+          playsinline
           preload={'auto'}
           type={'video/mp4'}
           onLoadStart={this.handleOnLoadStart}
