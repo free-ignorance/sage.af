@@ -2,8 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled,{ createGlobalStyle }  from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import { CookiesProvider } from "react-cookie";
+
 import Header from "./header";
 import Footer from "./footer";
+
 import "./layout.css";
 
 const GLOBAL_BACKGROUND_COLOR = "#FDFAF5";
@@ -71,17 +74,19 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
-    <LayoutContainerStyle>
-    <GlobalStyle/>
-      <LayoutStyle>
-      <Header/>
-        <main>{children}</main>
-      <Footer/>
-      </LayoutStyle>
-    </LayoutContainerStyle>
+    <CookiesProvider>
+      <GlobalStyle/>
+      <LayoutContainerStyle>
+        <LayoutStyle>
+          <Header/>
+            <main>{children}</main>
+          <Footer/>
+        </LayoutStyle>
+      </LayoutContainerStyle>
+    </CookiesProvider>
   )
 }
 

@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useCookies } from "react-cookie";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Create from "../components/account/create";
-import { getCookie } from '../utils/cookies';
-
 
 const PreStyle = styled.div`
   margin: auto;
@@ -22,7 +21,8 @@ const PreStyle = styled.div`
 `;
 
 function SignupPage() {
-  if (getCookie('sage_af_user_created') === null) {
+  const [cookies, setCookie] = useCookies(["sage_af_user_created"]);
+  if (cookies.sage_af_user_created === null) {
     return (
       <Layout>
       <SEO
@@ -43,10 +43,7 @@ function SignupPage() {
         title="Sage AF - Signup Page"
         description="Sign up here for some free homemade essentials. All options are free of charged & will be shipped free to your provided address."
       />
-      <PreStyle>
-        <h2>Looks like you signed up already</h2>
-        <p>We will send you an email with more instructions to complete the order soon.</p>
-      </PreStyle>
+
     </Layout>
     );
   }

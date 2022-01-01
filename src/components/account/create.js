@@ -1,14 +1,10 @@
 
-import styled from 'styled-components';
-import React, { Component }  from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import {TextInputField, ResponseDisplay} from '../form/';
-import { setCookie, getCookie } from '../../utils/cookies';
+import styled from "styled-components";
+import React, { Component }  from "react";
+import PropTypes from "prop-types";
 
-const util = require("util")
+import {TextInputField, ResponseDisplay} from "../form/";
 const pkjson = require("../../../package.json");
-
 const FormStyle = styled.form``;
 
 const InputContainer = styled.div`
@@ -88,14 +84,15 @@ class Create extends Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
-      firstName: '',
-      lastName: '',
-      addressOne: '',
+      firstName: "",
+      lastName: "",
+      addressOne: "",
       addressTwo: props.addressTwo,
       addressState: props.addressState,
-      addressZip: '',
-      addressCountry: '',
+      addressZip: "",
+      addressCountry: "",
       phone: "not set",
       email: "not set",
       isLoaded: false,
@@ -137,7 +134,7 @@ class Create extends Component {
 
 	validateForm = () => {
 		const { firstName, lastName, addressOne, addressTwo, addressState, addressZip, addressCountry, phone, email } = this.state;
-		if (firstName === '' || lastName === '' || addressOne === '' || addressState === '' || addressZip === '') {
+		if (firstName === "" || lastName === "" || addressOne === "" || addressState === "" || addressZip === "") {
 			this.setState({
 				isValid: false,
 				items: "Please fill out all fields before submitting."
@@ -171,17 +168,17 @@ class Create extends Component {
 				const response = await fetch(url,
 					{
 						method: `POST`,
-						// mode: 'no-cors', // no-cors, *cors, same-origin
-						cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+						// mode: "no-cors", // no-cors, *cors, same-origin
+						cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
 						headers: {
-							'Content-Type': 'application/json'
-							// 'Content-Type': 'application/x-www-form-urlencoded',
+							"Content-Type": "application/json"
+							// "Content-Type": "application/x-www-form-urlencoded",
 						},
-						redirect: 'follow', // manual, *follow, error
-						referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+						redirect: "follow", // manual, *follow, error
+						referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 						body: JSON.stringify(user)
 					});
-				await setCookie('sage_af_user_created', `true`, 30);
+
 				this.setState({
 					isLoaded: true,
 					isError: false,
