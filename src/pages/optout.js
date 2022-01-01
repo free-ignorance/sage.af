@@ -10,26 +10,17 @@ import SEO from '../components/seo';
  */
 
 const PreStyle = styled.div`
+  margin: auto;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-witdh: 36rem;
 
-	border: 0.5rem solid #DFD8CA;
-	padding: 2rem;
-  a {
-    text-decoration: none;
-    color: #105652;
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    width: 36rem;
   }
-
-	p {
-		text-align: justify;
-  	text-justify: inter-word;
-		text-indent: 2rem;
-	}
-`;
-
-const StandOutFont = styled.h2`
-  color: #B91646;
-  font-family: 'Amatic SC';
-  font-weight: 700;
-  font-size: 2rem;
 `;
 
 const OptoutPage = () => (
@@ -37,8 +28,10 @@ const OptoutPage = () => (
     <SEO title='Sage AF - Delete Account' />
     <PreStyle>
       <br/>
-			<p>Would you like to delete your account?</p>
-
+      <h2>Account Deletion</h2>
+      <p>No judgment, we want you to have full irrivokable consent and say of what is done with your data. That includes the right for all record of you to be removed from our databases and all records deleted. </p>
+      <h1>Soon...</h1>
+      <p>We are trying to finish authenticating user account deletion. Please in the mean time just email me.</p>
     </PreStyle>
   </Layout>
 )

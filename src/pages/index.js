@@ -6,9 +6,13 @@ import SEO from '../components/seo';
 import VideoHeader from '../components/content/video/VideoHeader';
 
 const ViewPortWrapper = styled.div`
-  height: 100vh;
+  height: 75vh;
   margin: 0;
   overflow-y: hidden;
+
+  @media only screen and (min-width: 768px) {
+    height: 95.1vh;
+  }
 `;
 
 const IndexPage = () => (

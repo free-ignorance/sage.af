@@ -32,7 +32,7 @@ const AboutPage = () => (
 			<p>Go to our <Link to='/signup'>Sign Up Page</Link> for some free homemade essentials. All options are free of charged & will be shipped free to your provided address.</p>
 			<h2>Let Us Know What you Think</h2>
 			<p>Let us know what your think by providing feedback on our <Link to='/signup'>Feed Back Page</Link>, its the only payment we ask.</p>
-			<p></p>
+			<p><br /></p>
 	  </PreStyle>
   </Layout>
 )

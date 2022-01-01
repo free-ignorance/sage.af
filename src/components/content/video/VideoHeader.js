@@ -6,20 +6,30 @@ import PropTypes from 'prop-types';
 const StyledHeader = styled.header`
   position: absolute;
   text-align: center;
-  height: 100%;
+  height: 80%;
   width: 100%;
   margin: 0;
   padding: 0;
+  @media only screen and (min-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 const VideoStyle = styled.video`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   object-fit: cover;
   top: 0;
   left: 0;
   z-index: -1;
   margin-top: -1rem;
+  filter: brightness(80%);
+
+  @media only screen and (min-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 const ViewPortHeader = styled.div`
@@ -45,38 +55,30 @@ const ViewPortHeader = styled.div`
   }
 
   h1 {
-    letter-spacing: 3rem;
+    letter-spacing: 1rem;
     line-height: 1.2;
     font-size: 3vw;
-    padding-left: 4rem;
+    padding-left: 1rem;
     color: white;
+
+    @media only screen and (min-width: 768px) {
+      line-height: 1.3;
+      letter-spacing: 3rem;
+      padding-left: 4rem;
+    }
   }
 
   h2 {
     line-height: 1.2;
     font-size: 10vw;
     color: white;
+    @media only screen and (min-width: 768px) {
+      line-height: 1.3;
+    }
   }
 `;
 /**
-   html, body {
-    height: 100vh;
-    overflow-x: hidden;
-  }
-
-  html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 150%;
-    line-height: 1.4;
-  }
-
-  body {
-    margin: 0;
-  }
-
-
-
-
+// Iframe alturnative
                 <iframe
           src={this.props.src}
           title="lmao"
@@ -94,7 +96,6 @@ const ViewPortHeader = styled.div`
           controls="false"
         />
 **/
-
 
 class VideoHeader extends Component {
   constructor(props) {
