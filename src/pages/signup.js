@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useCookies } from "react-cookie";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -21,8 +20,6 @@ const PreStyle = styled.div`
 `;
 
 function SignupPage() {
-  const [cookies, setCookie] = useCookies(["sage_af_user_created"]);
-  if (cookies.sage_af_user_created === null) {
     return (
       <Layout>
       <SEO
@@ -36,17 +33,6 @@ function SignupPage() {
       </PreStyle>
     </Layout>
     );
-  } else {
-    return (
-      <Layout>
-      <SEO
-        title="Sage AF - Signup Page"
-        description="Sign up here for some free homemade essentials. All options are free of charged & will be shipped free to your provided address."
-      />
-
-    </Layout>
-    );
-  }
 };
 
 export default SignupPage
