@@ -32,15 +32,20 @@ class TextInputField extends Component {
       isActive: false,
       placeholder: '',
       name: '',
+			required: this.props.required,
       value: ''
     };
+
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleInputFocus = this.handleInputFocus.bind(this);
+		this.handleInputBlur = this.handleInputBlur.bind(this);
   }
 
   handleInputChange = (event) => {
     const target = event.target;
     const {name, value}  = target;
 
-    if(value !== '') {
+    if(value !== '' && !this.state.required) {
       this.setState({
         isValid: true,
         isActive: true,
@@ -54,7 +59,7 @@ class TextInputField extends Component {
     const value = target.value
     const name = target.name
 
-    if (value === '') {
+    if(value === '' && this.state.required) {
       this.setState({
         isValid: false,
         isActive: true,
@@ -75,8 +80,7 @@ class TextInputField extends Component {
     this.setState({
       [name]: value,
     })
-    console.log(`${name} ${value}`)
-    if (value === '') {
+    if(value === '' && this.state.required) {
       this.setState({
         isValid: false,
         isActive: false,
@@ -131,8 +135,8 @@ class TextInputField extends Component {
             name={name}
             placeholder={placeholder}
             onChange={onChange}
-            onFocus={onFocus}
-            onBlur={onBlur}
+            onFocus={this.handleInputFocus}
+            onBlur={this.handleInputBlur}
           />
         <ErrorLabelStyle>[Required]</ErrorLabelStyle>
       </TextInputWrapper>
@@ -151,6 +155,7 @@ TextInputField.propTypes = {
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+	required: PropTypes.bool,
 }
 
 TextInputField.defaultProps = {
@@ -161,6 +166,7 @@ TextInputField.defaultProps = {
   value: '',
   label: '',
   pattern: '',
+	required: false,
 }
 
 export default TextInputField

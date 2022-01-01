@@ -2,8 +2,9 @@
 import styled from 'styled-components';
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
-import { Link, navigate } from 'gatsby';
-import {TextInputField} from '../form/';
+import { Link } from 'gatsby';
+import {TextInputField, ResponseDisplay} from '../form/';
+import { setCookie, getCookie } from '../../utils/cookies';
 
 const util = require("util")
 const pkjson = require("../../../package.json");
@@ -23,24 +24,28 @@ const InputContainer = styled.div`
   box-sizing: inherit;
 `;
 const SelectInputWrapper = styled.div`
-  position: relative;
-  display: flex;
-	width: 113%;
+	width: 100%;
   height: 100%;
-  font-size: 1rem;
-  line-height: 1.428rem;
-  letter-spacing: 0.2px;
-  font-weight: lighter;
-  color: rgb(51, 51, 51);
-  box-sizing: inherit;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 `;
 
 const SelectStyle = styled.select`
-  display: flex;
-  height: 44px;
   width: 100%;
-  margin: 1rem;
-  margin-top: 25px;
+	padding: 1.44rem;
+  // A reset of styles, including removing +the default dropdown arrow
+  appearance: none;
+	background: none;
+  // Additional resets for further consistency
+  background-color: white;
+	border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+	font-size: 1rem;
+	line-height: 1.428rem;
 `;
 
 const LabelStyle = styled.label`
@@ -84,21 +89,23 @@ class Create extends Component {
     super(props);
 
     this.state = {
-      firstName: props.firstName,
-      lastName: props.lastName,
-      addressOne: props.addressOne,
+      firstName: '',
+      lastName: '',
+      addressOne: '',
       addressTwo: props.addressTwo,
       addressState: props.addressState,
-      addressZip: props.addressZip,
-      addressCountry: props.addressCountry,
-      phone: props.phone,
-      email: props.email,
-      error: null,
+      addressZip: '',
+      addressCountry: '',
+      phone: "not set",
+      email: "not set",
       isLoaded: false,
+			isError: false,
+			isValid: false,
       items: []
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+		this.validateForm = this.validateForm.bind(this);
   }
 
   handleInputChange = (event) => {
@@ -128,70 +135,108 @@ class Create extends Component {
     })
   };
 
-
-  submitSuccess = async (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    event.target.style.backgroundColor = "GREEN";
-  }
-
-  submitFailure = async (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    event.target.style.backgroundColor = "RED";
-  }
+	validateForm = () => {
+		const { firstName, lastName, addressOne, addressTwo, addressState, addressZip, addressCountry, phone, email } = this.state;
+		if (firstName === '' || lastName === '' || addressOne === '' || addressState === '' || addressZip === '') {
+			this.setState({
+				isValid: false,
+				items: "Please fill out all fields before submitting."
+			});
+			return false
+		} else {
+			this.setState({
+				isValid: true,
+			});
+			return true
+		}
+	}
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const url = "https://veneer-prod.herokuapp.com/user/create";
+		if(this.validateForm()) {
+			const url = "https://veneer-prod.herokuapp.com/user/create";
+			try {
+				const user = {
+						firstName: this.state.firstName,
+						lastName: this.state.lastName,
+						addressOne: this.state.addressOne,
+						addressTwo: this.state.addressTwo,
+						addressState: this.state.addressState,
+						addressZip: this.state.addressZip,
+						email: this.state.email,
+						phone: this.state.phone,
+						reason: `v${pkjson.version}-WEB`,
+						"form-name": "newUser",
+					};
+				const response = await fetch(url,
+					{
+						method: `POST`,
+						// mode: 'no-cors', // no-cors, *cors, same-origin
+						cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+						headers: {
+							'Content-Type': 'application/json'
+							// 'Content-Type': 'application/x-www-form-urlencoded',
+						},
+						redirect: 'follow', // manual, *follow, error
+						referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+						body: JSON.stringify(user)
+					});
+				await setCookie('sage_af_user_created', `true`, 30);
+				this.setState({
+					isLoaded: true,
+					isError: false,
+				});
+			} catch (e) {
+        console.log(`error: ${e}`);
+				this.setState({
+					isLoaded: false,
+					isError: true,
+					erorrs: e
+				});
+			}
+		} else {
 
-    try {
-      const user = {
-          firstName: this.state.firstName,
-          lastName: this.state.lastName,
-          addressOne: this.state.addressOne,
-          addressTwo: this.state.addressTwo,
-          addressState: this.state.addressState,
-          addressZip: this.state.addressZip,
-          email: this.state.email,
-          phone: this.state.phone,
-          reason: `v${pkjson.version}-WEB`,
-          "form-name": "newUser",
-        };
-      const response = await fetch(url,
-        {
-          method: `POST`,
-          // mode: 'no-cors', // no-cors, *cors, same-origin
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: 'follow', // manual, *follow, error
-          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-          body: JSON.stringify(user)
-        });
-      const json = await response.json();
-      console.log(json);
-      this.submitSuccess(event);
-    } catch (e) {
-      console.log(`response from API:${e}`)
-      this.submitFailure(event);
-    }
+		}
   }
 
   render() {
+		const { isLoaded, isError, items, isValid } = this.state;
+		if (isLoaded) {
+			return (
+				<div>
+					<ResponseDisplay
+						isSuccess={true}
+						message={`Thank you for your interest.  We will be in touch shortly.`}
+						header={`Success!`}
+						/>
+				</div>
+			)
+		}
+		if (isError) {
+			return (
+				<div>
+					<ResponseDisplay
+						isSuccess={false}
+						message={`There was an issue trying to get you on the list...`}
+						header={`Oops!`}
+					 />
+				</div>
+			)
+		}
+
     return (
       <FormStyle onSubmit={this.handleSubmit}>
         <h2>What is your mailing address?</h2>
+				{!isValid ? <p>{items}</p> : null}
         <InputContainer>
           <TextInputField
             name="firstName"
             label="First Name"
             placeholder="First Name"
+						required={true}
             onChange={this.handleInputChange}
+						onBlur={this.handleInputBlur}
+						onFocus={this.handleInputFocus}
           />
         </InputContainer>
         <InputContainer>
@@ -199,7 +244,10 @@ class Create extends Component {
             name="lastName"
             label="Last Name"
             placeholder="Last Name"
+						required={true}
             onChange={this.handleInputChange}
+						onBlur={this.handleInputBlur}
+						onFocus={this.handleInputFocus}
             />
         </InputContainer>
         <InputContainer>
@@ -207,7 +255,10 @@ class Create extends Component {
             name="addressOne"
             label="Address One"
             placeholder="Address Line 1"
+						required={true}
             onChange={this.handleInputChange}
+						onBlur={this.handleInputBlur}
+						onFocus={this.handleInputFocus}
             />
         </InputContainer>
         <InputContainer>
@@ -216,11 +267,12 @@ class Create extends Component {
               label="Address Two"
               placeholder="Address Line 2"
               onChange={this.handleInputChange}
+							onBlur={this.handleInputBlur}
+							onFocus={this.handleInputFocus}
               />
           </InputContainer>
           <InputContainer>
             <SelectInputWrapper>
-              <LabelStyle>State</LabelStyle>
               <SelectStyle
                 type="text"
                 name="addressState"
@@ -284,7 +336,10 @@ class Create extends Component {
               label="Zip Code"
               name="addressZip"
               placeholder="10023"
+							required={true}
               onChange={this.handleInputChange}
+							onBlur={this.handleInputBlur}
+							onFocus={this.handleInputFocus}
             />
           </InputContainer>
           <InputContainer>
@@ -295,6 +350,8 @@ class Create extends Component {
               placeholder="212-555-1234"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               onChange={this.handleInputChange}
+							onBlur={this.handleInputBlur}
+							onFocus={this.handleInputFocus}
             />
             <TextInputField
               type="text"
@@ -302,6 +359,8 @@ class Create extends Component {
               label="Email"
               placeholder="Email"
               onChange={this.handleInputChange}
+							onBlur={this.handleInputBlur}
+							onFocus={this.handleInputFocus}
             />
         </InputContainer>
         <ButtonContainer>
