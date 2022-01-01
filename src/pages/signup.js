@@ -26,7 +26,7 @@ const SignupPage = () => (
     />
     <PreStyle>
       <h2>Want to try us out?</h2>
-      <p>Sage.af is looking for perspective users to give free gifts to. We would like you to sign up and in 1 week you will get to assemble your own gift pack totall free. We only ask you let us know how it was.</p>
+      <p>Sage.af is looking for perspective users to give free gifts to. We would like you to sign up and in 1 week you will get to assemble your own gift pack totally free. We only ask you let us know how it was.</p>
       <Create/>
     </PreStyle>
   </Layout>

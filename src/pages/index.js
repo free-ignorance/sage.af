@@ -6,12 +6,12 @@ import SEO from '../components/seo';
 import VideoHeader from '../components/content/video/VideoHeader';
 
 const ViewPortWrapper = styled.div`
-  height: 75vh;
+  height: 77vh;
   margin: 0;
   overflow-y: hidden;
 
   @media only screen and (min-width: 768px) {
-    height: 95.1vh;
+    height: 97vh;
   }
 `;
 

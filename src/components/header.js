@@ -6,15 +6,18 @@ import styled from 'styled-components';
 const HeaderContainerStyle = styled.div`
   position: relative;
   text-align: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
   border-bottom: thin solid rgb(223, 216, 202);
-
-
+  top: 0;
+  position: sticky;
+  z-index: 10;
+  background: inherit;
 `;
 
 const HeaderStyle = styled.div`
   width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+
   a {
     text-decoration: none;
     color: #105652;

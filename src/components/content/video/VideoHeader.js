@@ -23,7 +23,6 @@ const VideoStyle = styled.video`
   top: 0;
   left: 0;
   z-index: -1;
-  margin-top: -1rem;
   filter: brightness(80%);
 
   @media only screen and (min-width: 768px) {
