@@ -163,7 +163,7 @@ const ProductPage = ({ data: { product } })  =>{
   const iamgeSorce  = `${getSrc(firstImage)}`;
   const lol = iamgeSorce.split("http://sage.af").join('');
   const theImage = {
-    src: lol,
+    src: lol.split("https://sage.af").join(''),
     width: firstImage.width || 255,
     height: firstImage.height || 255,
   }
