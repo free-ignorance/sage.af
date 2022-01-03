@@ -95,6 +95,7 @@ class Create extends Component {
       addressCountry: "",
       phone: "not set",
       email: "not set",
+      reason: "",
       isLoaded: false,
 			isError: false,
 			isValid: false,
@@ -162,7 +163,8 @@ class Create extends Component {
 						addressZip: this.state.addressZip,
 						email: this.state.email,
 						phone: this.state.phone,
-						reason: `v${pkjson.version}-WEB`,
+            reason: this.state.reason,
+						version: `v${pkjson.version}-WEB`,
 						"form-name": "newUser",
 					};
 				const response = await fetch(url,
@@ -359,6 +361,17 @@ class Create extends Component {
 							onBlur={this.handleInputBlur}
 							onFocus={this.handleInputFocus}
             />
+        </InputContainer>
+        <InputContainer>
+          <TextInputField
+            name="reason"
+            label="How did you hear about us?"
+            placeholder="How did you hear about us?"
+						required={false}
+            onChange={this.handleInputChange}
+						onBlur={this.handleInputBlur}
+						onFocus={this.handleInputFocus}
+          />
         </InputContainer>
         <ButtonContainer>
           <SubmitButton>Yes Send me a Gift</SubmitButton>

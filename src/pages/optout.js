@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-
 
 /**
  * This page will allow users to have their account deleted, not have a package shipped and destroy all information about them.
  */
-
 const PreStyle = styled.div`
   margin: auto;
   margin-bottom: 1rem;

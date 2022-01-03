@@ -27,7 +27,6 @@ const PrivacyPage = () => (
     <SEO
       title="Sage AF - Your Privacy Matters"
       description="We do not sell, trade, or rent your personal information to others; read our whole privacy policy to know just how much you matter to us."
-      meta={[]}
     />
     <PreStyle>
       <br/>

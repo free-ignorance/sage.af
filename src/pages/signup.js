@@ -24,7 +24,7 @@ function SignupPage() {
       <Layout>
       <SEO
         title="Sage AF - Signup Page"
-        description="Sign up here for some free homemade essentials. All options are free of charged & will be shipped free to your provided address."
+        description="Sign up here for some free homemade essentials. 1-2 weeks after signup you get to pick. All options are free of charged & will be shipped free to your provided address."
       />
       <PreStyle>
         <h2>Want to try us out?</h2>

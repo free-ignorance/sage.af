@@ -43,7 +43,9 @@ const GridCard = styled.div`
 
 const CollectionPage = () => (
   <Layout>
-    <SEO title='Sage AF - Product Page' />
+    <SEO
+		title='Sage AF - '
+		/>
     <PreStyle>
 			<ControlPanel>
 				<h2> left control Panel</h2>

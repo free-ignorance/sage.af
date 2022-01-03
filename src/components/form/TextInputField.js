@@ -59,6 +59,9 @@ class TextInputField extends Component {
     const value = target.value
     const name = target.name
 
+    this.setState({
+      isActive: true,
+    });
     if(value === '' && this.state.required) {
       this.setState({
         isValid: false,
@@ -80,6 +83,10 @@ class TextInputField extends Component {
     this.setState({
       [name]: value,
     })
+
+    this.setState({
+      isActive: false,
+    });
     if(value === '' && this.state.required) {
       this.setState({
         isValid: false,
@@ -94,6 +101,7 @@ class TextInputField extends Component {
       })
       target.style.border = '';
     }
+
   };
 
   render() {

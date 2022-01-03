@@ -12,10 +12,6 @@ const PreStyle = styled.div`
   padding-right: 2rem;
   max-witdh: 36rem;
 
-  p {
-    padding-bottom: 1rem;
-  }
-
   @media only screen and (min-width: 768px) {
     font-size: 16px;
     width: 36rem;
@@ -24,7 +20,7 @@ const PreStyle = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title='404: Not found' />
+    <SEO title='404: Page Not Found' />
 		<PreStyle>
 			<h1>404 PAGE NOT FOUND</h1>
 			<p>You just hit a route that doesn&#39;t exist... the sadness.</p>

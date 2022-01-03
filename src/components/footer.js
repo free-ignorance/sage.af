@@ -77,6 +77,8 @@ const CopyRightStyleVersionStyle = styled.div`
   }
 `;
 
+
+
 /**
  * Some notes for my future self on what i am thinking about the footer.
  * Right now there are 3 categories of links common in footers for ecommerce sites.:
@@ -96,28 +98,7 @@ const Footer = () => (
         <li><span>|</span></li>
         <li><Link to="/privacy">Privacy Policy</Link></li>
       </ul>
-      <p> </p>
-      <CopyRightStyleVersionStyle>Client v{pkjson.version}</CopyRightStyleVersionStyle>
-      <CopyRightStyleVersionStyle>© {new Date().getFullYear()} <StandOutFont>Sage AF</StandOutFont> LLC. All Rights Reserved</CopyRightStyleVersionStyle>
-      <p> </p>
-    </FooterNavStyle>
-  </FooterContainerStyle>
-);
-
-const NewFooter = () => (
-  <FooterContainerStyle>
-    <FooterNavStyle>
-      <ul>
-        <li><a href="#">Terms of Use</a></li>
-        <li><span>|</span></li>
-        <li><a href="#">Sitemap</a></li>
-        <li><span>|</span></li>
-        <li><Link to="/privacy">Privacy Policy</Link></li>
-      </ul>
-      <p> </p>
-      <CopyRightStyleVersionStyle>Client v{pkjson.version}</CopyRightStyleVersionStyle>
-      <CopyRightStyleVersionStyle>© {new Date().getFullYear()} <StandOutFont>Sage AF</StandOutFont> LLC. All Rights Reserved</CopyRightStyleVersionStyle>
-      <p> </p>
+      <CopyRightStyleVersionStyle>©{new Date().getFullYear()} <StandOutFont>Sage AF</StandOutFont> LLC. All Rights Reserved. Client: v{pkjson.version}</CopyRightStyleVersionStyle>
     </FooterNavStyle>
   </FooterContainerStyle>
 );
