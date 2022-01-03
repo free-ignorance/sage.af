@@ -13,9 +13,6 @@ const PreStyle = styled.div`
 	height: 100%;
 	display: flex;
 `;
-const CollectionWrapper = styled.div`
-
-`;
 
 const ControlPanel = styled.div`
 	flex: 20%;
