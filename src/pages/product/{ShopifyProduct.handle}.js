@@ -159,9 +159,21 @@ const ProductPage = ({ data: { product } })  =>{
   const hasVariants = variants.length > 1
   const hasImages = images.length > 0
   const hasMultipleImages = true || images.length > 1
+
+  const iamgeSorce  = `${getSrc(firstImage)}`;
+  const lol = iamgeSorce.split("http://sage.af").join('');
+  const theImage = {
+    src: lol,
+    width: firstImage.width || 255,
+    height: firstImage.height || 255,
+  }
   return (
     <Layout>
-      <SEO title='Sage AF - Product Page' />
+      <SEO
+        title={`Sage AF - ${product.title}`}
+        description={product.description}
+        image={theImage}
+      />
       <PreStyle>
         <LeftSide>
         {hasImages && (
