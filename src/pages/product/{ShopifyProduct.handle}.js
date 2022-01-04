@@ -5,6 +5,8 @@ import { graphql } from 'gatsby';
 import isEqual from "lodash.isequal";
 import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 import Layout from '../../components/layout';
+import { NumericInput } from "../../components/form/NumericInput"
+import { AddToCart } from "../../components/cart/AddToCart"
 import SEO from '../../components/seo';
 import {formatPrice, getCurrencySymbol } from '../../utils/format-price'
 import { StoreContext } from "../../context/store-context"
@@ -15,6 +17,14 @@ const PreStyle = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
 `;
+
+const Breadcrumb = styled.div`
+
+`;
+
+
+
+
 const ProductDescription = styled.div`
   flex: 60%;
   text-align: left;
@@ -25,7 +35,6 @@ const ProductDescription = styled.div`
   font-size: 1.2rem;
   line-height: 1.5rem;
   color: #000;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   @media (max-width: 768px) {
     flex: 100%;
@@ -36,14 +45,46 @@ const ProductDescription = styled.div`
   }
 `;
 
-const noImagePreview = styled.span`
+const AddToCartWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #ccc;
+`;
+
+const PriceCartWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`;
+
+const ProductPrice = styled.div`
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-right: 5rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  color: #B91646;
+`;
+
+const NoImagePreview = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 300px;
 `;
 
-const scrollForMore = styled.div`
+const ScrollForMore = styled.div`
   text-align: center;
   margin-top: 1rem;
   display: none;
@@ -64,25 +105,6 @@ const RightSide = styled.div`
 	width: 100%;
 	padding-left: 2rem;
 	padding-right: 2rem;
-`;
-
-
-const productImageWrapper = styled.div`
-  position: relative;
-`;
-
-const container = styled.div`
-`;
-
-const productImageList  = styled.ul`
-  display: flex;
-  overflow-x: auto;
-`;
-
-const productImageListItem = styled.li`
-  display: flex;
-  flex: 0 0 100%;
-  white-space: nowrap;
 `;
 
 
@@ -160,10 +182,11 @@ const ProductPage = ({ data: { product } })  =>{
   const hasImages = images.length > 0
   const hasMultipleImages = true || images.length > 1
 
-  const iamgeSorce  = `${getSrc(firstImage)}`;
-  const lol = iamgeSorce.split("http://sage.af").join('');
+  let imageSource  = `${getSrc(firstImage)}`;
+  imageSource  = imageSource.split("http://sage.af").join('');
+  imageSource  = imageSource.split("https://sage.af").join('');
   const theImage = {
-    src: lol.split("https://sage.af").join(''),
+    src: imageSource,
     width: firstImage.width || 255,
     height: firstImage.height || 255,
   }
@@ -203,20 +226,41 @@ const ProductPage = ({ data: { product } })  =>{
                 </productImageList>
               </div>
               {hasMultipleImages && (
-                <scrollForMore id="instructions">
+                <ScrollForMore id="instructions">
                   <span aria-hidden="true">←</span> scroll for more{" "}
                   <span aria-hidden="true">→</span>
-                </scrollForMore>
+                </ScrollForMore>
               )}
             </productImageWrapper>
           )}
           {!hasImages && (
-            <span className={noImagePreview}>No Preview image</span>
+            <NoImagePreview>No Preview image</NoImagePreview>
           )}
         </LeftSide>
         <RightSide>
+          <Breadcrumb>{product.productType}</Breadcrumb>
           <h1>{title}</h1>
           <ProductDescription dangerouslySetInnerHTML={{__html: descriptionHtml}}></ProductDescription>
+          <PriceCartWrapper>
+            <ProductPrice>{price}</ProductPrice>
+            <AddToCartWrapper>
+              <NumericInput
+                aria-label="Quantity"
+                onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
+                onDecrement={() => setQuantity((q) => Math.max(1, q - 1))}
+                onChange={(event) => setQuantity(event.currentTarget.value)}
+                value={quantity}
+                min="1"
+                max="20"
+              />
+              <AddToCart
+                variantId={productVariant.storefrontId}
+                quantity={quantity}
+                available={available}
+              />
+            </AddToCartWrapper>
+          </PriceCartWrapper>
+
         </RightSide>
       </PreStyle>
     </Layout>
