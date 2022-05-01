@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import { StoreContext } from "../context/store-context"
+
 
 const HeaderContainerStyle = styled.div`
   position: relative;
@@ -67,7 +69,10 @@ const Logo = styled.span`
   font-size: 3rem;
 `;
 
-const Header = ({ siteTitle }) => (
+
+
+const Header = ({ siteTitle }) => {
+  return (
    <HeaderContainerStyle>
     <HeaderStyle>
       <NavStyle>
@@ -76,16 +81,17 @@ const Header = ({ siteTitle }) => (
           {/* <li><span>|</span></li>
           <li>
             <Link to='/collection'>Essentials</Link>
-          </li> */}
+          </li>
           <li><span>|</span></li>
-          <li><Link to='/signup'>Sign Up</Link></li>
+          <li><Link to='/signup'>Sign Up</Link></li>*/}
           <li><span>|</span></li>
           <li><Link to='/about'>All About Us</Link></li>
         </ul>
       </NavStyle>
     </HeaderStyle>
    </HeaderContainerStyle>
-);
+)
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

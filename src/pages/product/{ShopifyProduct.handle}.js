@@ -22,7 +22,12 @@ const Breadcrumb = styled.div`
 
 `;
 
-
+const ProductImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 
 const ProductDescription = styled.div`
@@ -200,7 +205,7 @@ const ProductPage = ({ data: { product } })  =>{
       <PreStyle>
         <LeftSide>
         {hasImages && (
-            <productImageWrapper>
+            <ProductImageWrapper>
               <div
                 role="group"
                 aria-label="gallery"
@@ -231,7 +236,7 @@ const ProductPage = ({ data: { product } })  =>{
                   <span aria-hidden="true">→</span>
                 </ScrollForMore>
               )}
-            </productImageWrapper>
+            </ProductImageWrapper>
           )}
           {!hasImages && (
             <NoImagePreview>No Preview image</NoImagePreview>

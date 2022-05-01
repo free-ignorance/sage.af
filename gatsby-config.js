@@ -8,12 +8,6 @@ module.exports = {
     siteUrl: "http://sage.af",
   },
   plugins: [
-   process.env.GOOGLE_ANALYTICS_ID && {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
-    },
 	  {
       resolve: "gatsby-source-shopify",
       options: {
@@ -37,7 +31,6 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     {
       resolve: `gatsby-plugin-manifest`,
-
       options: {
         name: `sage.af`,
         short_name: `starter`,
