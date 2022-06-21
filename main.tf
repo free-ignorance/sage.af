@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 locals {
-  name   = "example-ec2-complete"
-  region = "eu-west-1"
+  name   = "sage-af"
+  region = "us-east-2"
 
   user_data = <<-EOT
   #!/bin/bash
