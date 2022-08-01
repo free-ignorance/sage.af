@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 
 const PreStyle = styled.div`
   margin: auto;
@@ -18,17 +18,14 @@ const PreStyle = styled.div`
   }
 `;
 
-const NotFoundPage = () => (
+const RitualsIndexPage = () => (
   <Layout>
-    <SEO title='404: Page Not Found' />
+    <SEO title='Rituals for yourself' />
 		<PreStyle>
-			<h1>404 PAGE NOT FOUND</h1>
-			<p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      <p><br /></p>
-      <p><br /></p>
-      <p><br /></p>
+			<h1>Rituals</h1>
+			<p></p>
 		</PreStyle>
   </Layout>
 )
 
-export default NotFoundPage
+export default RitualsIndexPage
