@@ -22,9 +22,10 @@ const HeaderStyle = styled.div`
     text-decoration: none;
     color: #105652;
   }
+
   nav {
     margin: auto;
-    font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+    font-family: 'Roboto', Consolas, 'Courier New', monospace, sans-serif;
     line-height: 1.1 rem;
     text-shadow: 0 0 2px rgba(100,100,100,0.5);
   }
@@ -62,7 +63,7 @@ const NavStyle = styled.nav`
 
 const Logo = styled.span`
   color: #B91646;
-  font-family: 'Amatic SC';
+  font-family: 'Chicle';
   font-weight: 700;
   font-size: 3rem;
 `;

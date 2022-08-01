@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
 const LayoutContainerStyle = styled.div`
   width: 100%;
-  font-family: "Source Code Pro", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
+  font-family: 'Roboto', Consolas, 'Courier New', monospace, sans-serif;
   background-color: ${GLOBAL_BACKGROUND_COLOR};
   width: 100%;
   height: 100%;

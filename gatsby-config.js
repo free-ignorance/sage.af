@@ -55,6 +55,7 @@ module.exports = {
 					'yeseva one',
 					'Amatic SC\:400,400i,700',
 					'open sans\:400,400i,700',
+          'Chicle\:400,400i,700',
 				],
 				display: 'swap',
 			}
