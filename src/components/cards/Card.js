@@ -54,6 +54,10 @@ class Card extends Component {
         });
       });
     } catch (error) {
+      this.setState({
+        isLoaded: true,
+        error
+      });
       console.log(error);
     }
   }
@@ -86,7 +90,7 @@ Card.propTypes = {
 }
 
 Card.defaultProps = {
-  id: ``,
+  id: `1`,
   name: ``,
   desciption: ``,
   image: ``,
