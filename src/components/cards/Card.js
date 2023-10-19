@@ -29,7 +29,7 @@ class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
+      id: props.id,
       error: null,
       isLoaded: false,
       items: []
