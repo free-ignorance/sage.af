@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Layout from '../components/layout';
 
-import SEO from '../components/seo';
+import { Link } from 'gatsby';
+import Layout from '../../components/layout';
+import Card from '../../components/cards/Card';
+import SEO from '../../components/seo';
 
 const PreStyle = styled.div`
   margin: auto;
@@ -19,18 +20,17 @@ const PreStyle = styled.div`
   }
 `;
 
-const AboutPage = () => (
+const CardsPage = (props) => (
   <Layout>
 		<SEO
-			title="Sage AF - All About Us"
-			description=""
+			title="Sage AF - Cards Page"
+			description= "Cards Page"
     />
     <PreStyle>
-			<h2>All About Us</h2>
-
+      <Card id={props.id} />
 			<p><br /></p>
 	  </PreStyle>
   </Layout>
 )
 
-export default AboutPage
+export default CardsPage

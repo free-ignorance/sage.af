@@ -46,7 +46,7 @@ const ViewPortHeader = styled.div`
   h1 h2 {
     align-self: center;
     text-align: center;
-    font-family: "Amatic SC";
+    font-family:  "UnifrakturCook";
     font-weight: 700;
     text-shadow: 0 0 2px rgba(0,0,0,0.5);
     color: white;

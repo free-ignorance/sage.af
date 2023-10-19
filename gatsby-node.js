@@ -1,9 +1,24 @@
-// gatsby-node.js
-// exports.createPages = async ({ graphql, actions }) => {
-// 	const { createRedirect } = actions;
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
+ */
 
-// 	createRedirect({
-//     fromPath: `/blog/recipes/*`,
-//     toPath: `/recipes/*`,
-//   });
-// }
+/**
+ * @type {import('gatsby').GatsbyNode['createPages']}
+ */
+// gatsby-node.js
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/cards/)) {
+    page.matchPath = "/cards/*"
+
+    // Update the page.
+    createPage(page)
+  }
+}

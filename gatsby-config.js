@@ -1,5 +1,3 @@
-require("dotenv").config()
-
 module.exports = {
   siteMetadata: {
     title: `sage.af`,
@@ -8,18 +6,19 @@ module.exports = {
     siteUrl: "http://sage.af",
   },
   plugins: [
-   process.env.GOOGLE_ANALYTICS_ID && {
-      resolve: "gatsby-plugin-google-analytics",
+    {
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
-    },
-	  {
-      resolve: "gatsby-source-shopify",
-      options: {
-        password: process.env.SHOPIFY_SHOP_PASSWORD,
-        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
-        shopifyConnections: ["collections"],
+        name: `sage.af`,
+        short_name: `sage`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        // theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/icons/favicon-96x96.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -29,29 +28,25 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-gatsby-cloud",
+    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-manifest`,
-
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `sage.af`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/icons/favicon-96x96.png`, // This path is relative to the root of the site.
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
-		{
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: [
+          'Macondo',
+          'UnifrakturCook\:700',
+          'Noto Sans Runic',
+          'Didact Gothic',
+          'Homemade Apple',
 					'yeseva one',
 					'Amatic SC\:400,400i,700',
 					'open sans\:400,400i,700',

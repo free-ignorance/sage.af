@@ -56,7 +56,7 @@ const FooterNavStyle = styled.footer`
 `;
 
 const StandOutFont = styled.span`
-  font-family: "Amatic SC";
+  font-family: 'Homemade Apple';
   font-weight: 700;
   color: #B91646;
 	padding: 0.5rem;

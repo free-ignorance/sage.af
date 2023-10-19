@@ -9,11 +9,20 @@ import Footer from "./footer";
 
 import "./layout.css";
 
-const GLOBAL_BACKGROUND_COLOR = "#FDFAF5";
-const GLOBAL_LINK_COLOR = "#105652";
-const GLOBAL_PRIMARY_ACCENT_COLOR = "#B91646";
-const GLOBAL_SECONDARY_ACCENT_COLOR = "#105652";
-const GLOBAL_TRINARY_ACCENT_COLOR = "#FBF3E4";
+const GLOBAL_BACKGROUND_COLOR = "#000814";
+const GLOBAL_LINK_COLOR = "#ffc300";
+const GLOBAL_PRIMARY_ACCENT_COLOR = "#003566";
+const GLOBAL_SECONDARY_ACCENT_COLOR = "#003566";
+const GLOBAL_TRINARY_ACCENT_COLOR = "#6f1d1b";
+
+
+
+
+// const GLOBAL_BACKGROUND_COLOR = "#FDFAF5";
+// const GLOBAL_LINK_COLOR = "#105652";
+// const GLOBAL_PRIMARY_ACCENT_COLOR = "#B91646";
+// const GLOBAL_SECONDARY_ACCENT_COLOR = "#105652";
+// const GLOBAL_TRINARY_ACCENT_COLOR = "#FBF3E4";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
 const LayoutContainerStyle = styled.div`
   width: 100%;
-  font-family: "Source Code Pro", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
+  font-family: "Spectral", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
   background-color: ${GLOBAL_BACKGROUND_COLOR};
   width: 100%;
   height: 100%;
@@ -32,15 +41,16 @@ const LayoutContainerStyle = styled.div`
   position: relative;
 
   p {
+    color: #8d99ae;
     text-align: justify;
     text-justify: inter-word;
     text-indent: 1.5rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Amatic SC";
+    font-family: 'Homemade Apple';
     font-weight: 700;
-    text-shadow: 0 0 2px rgba(100,100,100,0.5);
+    text-shadow: 0 0 1px rgba(100,100,100,0.5);
   }
 
   h1 {
@@ -51,6 +61,11 @@ const LayoutContainerStyle = styled.div`
   h2 {
     color: ${GLOBAL_SECONDARY_ACCENT_COLOR};
     font-size: 2rem;
+  }
+
+  h3 {
+    color: ${GLOBAL_TRINARY_ACCENT_COLOR};
+    font-size: 1.5rem;
   }
 
   a {

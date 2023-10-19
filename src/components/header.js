@@ -24,7 +24,6 @@ const HeaderStyle = styled.div`
   }
   nav {
     margin: auto;
-    font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
     line-height: 1.1 rem;
     text-shadow: 0 0 2px rgba(100,100,100,0.5);
   }
@@ -61,26 +60,26 @@ const NavStyle = styled.nav`
 `;
 
 const Logo = styled.span`
-  color: #B91646;
-  font-family: 'Amatic SC';
   font-weight: 700;
+  font-family: 'Homemade Apple';
   font-size: 3rem;
 `;
 
 const Header = ({ siteTitle }) => (
    <HeaderContainerStyle>
     <HeaderStyle>
+    {/* <style>
+      @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+    </style>   */}
       <NavStyle>
         <ul>
-          <li><Link to='/'><Logo>Sage AF</Logo></Link></li>
-          {/* <li><span>|</span></li>
+          <li><Link to='/'><Logo>Sage af</Logo></Link></li>
+          <li><span>|</span></li>
           <li>
-            <Link to='/collection'>Essentials</Link>
-          </li> */}
+            <Link to='/tarot'>Tarot Reading</Link>
+          </li>
           <li><span>|</span></li>
-          <li><Link to='/signup'>Sign Up</Link></li>
-          <li><span>|</span></li>
-          <li><Link to='/about'>All About Us</Link></li>
+          <li><Link to='/about'>About Us</Link></li>
         </ul>
       </NavStyle>
     </HeaderStyle>
