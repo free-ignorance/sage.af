@@ -37,29 +37,36 @@ class Card extends Component {
   }
 
   componentDidMount() {
-    try {
-    fetch(`https://soothsaying-c436343ba6ff.herokuapp.com/cards/${this.state.id}`)
-    .then(res => res.json())
-    .then(
-      (result) => {
-        console.log(result);
-        this.setState({
-          isLoaded: true,
-          items: result
-        });
-      }, (error) => {
-        this.setState({
-          isLoaded: true,
-          error
-        });
-      });
-    } catch (error) {
+    if (this.state.id.length === 0) {
       this.setState({
-        isLoaded: true,
-        error
+        isLoaded: false,
       });
-      console.log(error);
+    } else {
+      try {
+        fetch(`https://soothsaying-c436343ba6ff.herokuapp.com/cards/${this.state.id}`)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result);
+            this.setState({
+              isLoaded: true,
+              items: result
+            });
+          }, (error) => {
+            this.setState({
+              isLoaded: false,
+              error
+            });
+          });
+        } catch (error) {
+          this.setState({
+            isLoaded: false,
+            error
+          });
+          console.log(error);
+        }
     }
+    
   }
 
   render() {
@@ -90,7 +97,7 @@ Card.propTypes = {
 }
 
 Card.defaultProps = {
-  id: `1`,
+  id: ``,
   name: ``,
   desciption: ``,
   image: ``,

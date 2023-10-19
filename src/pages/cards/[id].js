@@ -19,18 +19,20 @@ const PreStyle = styled.div`
     width: 36rem;
   }
 `;
-
-const CardsPage = (props) => (
-  <Layout>
-		<SEO
-			title="Sage AF - Cards Page"
-			description= "Cards Page"
-    />
-    <PreStyle>
-      <Card id={props.id} />
-			<p><br /></p>
-	  </PreStyle>
-  </Layout>
-)
+function CardsPage({ params }) {
+  const id = params[`*`];
+  return (
+    <Layout>
+      <SEO
+        title="Sage AF - Cards Page"
+        description= "Cards Page"
+      />
+      <PreStyle>
+        <Card id={id} />
+        <p><br /></p>
+      </PreStyle>
+    </Layout>
+  )
+}
 
 export default CardsPage
