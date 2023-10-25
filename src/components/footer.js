@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+
+import Scheme from "./style";
 const pkjson = require("../../package.json");
 
 const FooterContainerStyle = styled.div`
   width: 100%;
-  border-top: thin solid rgb(223, 216, 202);
   margin-top: 2rem;
   position: relative;
   text-align: center;
@@ -16,20 +17,11 @@ const FooterContainerStyle = styled.div`
 const FooterNavStyle = styled.footer`
   width: 100%;
   font-size: 10px;
-  color: #105652;
+  color: #8d99ae;
   line-height: 1.1 rem;
   text-shadow: 0 0 2px rgba(100,100,100,0.5);
   margin: auto;
   overflow: hidden;
-
-  a {
-    text-decoration: none;
-    color: #105652;
-  }
-
-  .active {
-    text-decoration: underline;
-  }
 
   ul {
     margin: 0;
@@ -58,7 +50,7 @@ const FooterNavStyle = styled.footer`
 const StandOutFont = styled.span`
   font-family: 'Homemade Apple';
   font-weight: 700;
-  color: #B91646;
+  color: ${Scheme.colors.yellowc.hex};
 	padding: 0.5rem;
   text-shadow: 0 0 2px rgba(100,100,100,0.5);
   font-size: 1.2rem;
@@ -66,7 +58,7 @@ const StandOutFont = styled.span`
 
 const CopyRightStyleVersionStyle = styled.div`
   font-size: 10px;
-  color: #105652;
+  color: #8d99ae;
   text-shadow: 0 0 2px rgba(100,100,100,0.5);
   margin-top: 0.5rem;
 
@@ -98,7 +90,7 @@ const Footer = () => (
         <li><span>|</span></li>
         <li><Link to="/privacy">Privacy Policy</Link></li>
       </ul>
-      <CopyRightStyleVersionStyle>©{new Date().getFullYear()} <StandOutFont>Sage AF</StandOutFont> LLC. All Rights Reserved. Client: v{pkjson.version}</CopyRightStyleVersionStyle>
+      <CopyRightStyleVersionStyle>©{new Date().getFullYear()} <StandOutFont>Sage af</StandOutFont> LLC. All Rights Reserved. Client: v{pkjson.version}</CopyRightStyleVersionStyle>
     </FooterNavStyle>
   </FooterContainerStyle>
 );

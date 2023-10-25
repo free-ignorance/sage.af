@@ -25,7 +25,7 @@ h3 {
 }
 `;
 
-class Card extends Component {
+class FullCardPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,7 +88,7 @@ class Card extends Component {
   }
 }
 
-Card.propTypes = {
+FullCardPage.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   desciption: PropTypes.string,
@@ -96,7 +96,7 @@ Card.propTypes = {
   alt_text: PropTypes.string,
 }
 
-Card.defaultProps = {
+FullCardPage.defaultProps = {
   id: ``,
   name: ``,
   desciption: ``,
@@ -105,4 +105,4 @@ Card.defaultProps = {
 }
 
 
-export default Card
+export default FullCardPage

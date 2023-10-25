@@ -4,19 +4,17 @@ import styled,{ createGlobalStyle }  from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { CookiesProvider } from "react-cookie";
 
+import Scheme from "./style";
 import Header from "./header";
 import Footer from "./footer";
 
 import "./layout.css";
 
-const GLOBAL_BACKGROUND_COLOR = "#000814";
-const GLOBAL_LINK_COLOR = "#ffc300";
-const GLOBAL_PRIMARY_ACCENT_COLOR = "#003566";
-const GLOBAL_SECONDARY_ACCENT_COLOR = "#003566";
-const GLOBAL_TRINARY_ACCENT_COLOR = "#6f1d1b";
-
-
-
+const GLOBAL_BACKGROUND_COLOR = Scheme.colors.background.hex;
+const GLOBAL_LINK_COLOR = Scheme.colors.bluec.hex;
+const GLOBAL_PRIMARY_ACCENT_COLOR = Scheme.colors.yellowc.hex;
+const GLOBAL_SECONDARY_ACCENT_COLOR = Scheme.colors.yellowc.hex;
+const GLOBAL_TRINARY_ACCENT_COLOR = Scheme.colors.redc.hex;
 
 // const GLOBAL_BACKGROUND_COLOR = "#FDFAF5";
 // const GLOBAL_LINK_COLOR = "#105652";
@@ -28,17 +26,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${GLOBAL_BACKGROUND_COLOR};
   }
-`;
-
-const LayoutContainerStyle = styled.div`
-  width: 100%;
-  font-family: "Spectral", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
-  background-color: ${GLOBAL_BACKGROUND_COLOR};
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
 
   p {
     color: #8d99ae;
@@ -72,6 +59,17 @@ const LayoutContainerStyle = styled.div`
     text-decoration: none;
     color: ${GLOBAL_LINK_COLOR};
   }
+`;
+
+const LayoutContainerStyle = styled.div`
+  width: 100%;
+  font-family: "Spectral", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
+  background-color: ${GLOBAL_BACKGROUND_COLOR};
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 `;
 
 const LayoutStyle = styled.div`

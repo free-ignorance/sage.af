@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Link } from 'gatsby';
 import Layout from '../../components/layout';
-import FullCardPage from '../../components/cards/FullCardPage';
+import CardCollectionTiles from '../../components/cards/CardCollectionTiles';
 import SEO from '../../components/seo';
 
 const PreStyle = styled.div`
@@ -19,20 +19,20 @@ const PreStyle = styled.div`
     width: 36rem;
   }
 `;
-function CardsPage({ params }) {
+function CardsCollectionPage({ params }) {
   const id = params[`*`];
   return (
     <Layout>
       <SEO
-        title="Sage AF - Cards Page"
-        description= "Cards Page"
+        title="Sage AF - Cards Collection Page"
+        description= "Card Collection Page"
       />
       <PreStyle>
-        <FullCardPage id={id} />
+        <CardCollectionTiles />
         <p><br /></p>
       </PreStyle>
     </Layout>
   )
 }
 
-export default CardsPage
+export default CardsCollectionPage
