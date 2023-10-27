@@ -17,9 +17,8 @@ const FooterContainerStyle = styled.div`
 const FooterNavStyle = styled.footer`
   width: 100%;
   font-size: 10px;
-  color: #8d99ae;
+  color: ${Scheme.colors.purple.hex};
   line-height: 1.1 rem;
-  text-shadow: 0 0 2px rgba(100,100,100,0.5);
   margin: auto;
   overflow: hidden;
 
@@ -34,7 +33,7 @@ const FooterNavStyle = styled.footer`
     padding: 0.3rem;
     display:inline;
     span {
-      color: #B91646;
+      color: ${Scheme.colors.purple.hex};
     }
   }
 
@@ -50,7 +49,7 @@ const FooterNavStyle = styled.footer`
 const StandOutFont = styled.span`
   font-family: 'Homemade Apple';
   font-weight: 700;
-  color: ${Scheme.colors.yellowc.hex};
+  color: ${Scheme.colors.red.hex};
 	padding: 0.5rem;
   text-shadow: 0 0 2px rgba(100,100,100,0.5);
   font-size: 1.2rem;
@@ -58,7 +57,7 @@ const StandOutFont = styled.span`
 
 const CopyRightStyleVersionStyle = styled.div`
   font-size: 10px;
-  color: #8d99ae;
+  color: ${Scheme.colors.purple.hex};
   text-shadow: 0 0 2px rgba(100,100,100,0.5);
   margin-top: 0.5rem;
 

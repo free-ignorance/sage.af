@@ -26,7 +26,9 @@ const TarotPage = () => (
 			description= "Tarot About Page"
     />
     <PreStyle>
-			<h2>what is tarot?</h2>
+			<h2>Frequently Asked Questions</h2>
+      <Link to='/about'>About Us</Link>
+      <h3>what is tarot?</h3>
       <p>
       A tarot reading is a form of cartomancy, or divination, whereby practitioners use tarot cards to help self-reflect, connect with their inner self, meditate, and problem-solve. They formulate a subject or focus, sometimes an intent, then draw cards to interpret random meanings applied to the subject. Some suggest the practice can help to gain insight by applying random alturnative perspectives to an issue and the practitioner explores and reflects on their issue with a different set of eyes. Ultimately Tarot is a tool for self reflection and discovery. It is not a tool for predicting the future.
       </p>

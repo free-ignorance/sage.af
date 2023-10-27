@@ -11,10 +11,10 @@ import Footer from "./footer";
 import "./layout.css";
 
 const GLOBAL_BACKGROUND_COLOR = Scheme.colors.background.hex;
-const GLOBAL_LINK_COLOR = Scheme.colors.bluec.hex;
-const GLOBAL_PRIMARY_ACCENT_COLOR = Scheme.colors.yellowc.hex;
-const GLOBAL_SECONDARY_ACCENT_COLOR = Scheme.colors.yellowc.hex;
-const GLOBAL_TRINARY_ACCENT_COLOR = Scheme.colors.redc.hex;
+const GLOBAL_LINK_COLOR = Scheme.colors.yellow.hex;
+const GLOBAL_PRIMARY_ACCENT_COLOR = Scheme.colors.yellow.hex;
+const GLOBAL_SECONDARY_ACCENT_COLOR = Scheme.colors.red.hex;
+const GLOBAL_TRINARY_ACCENT_COLOR = Scheme.colors.blue.hex;
 
 // const GLOBAL_BACKGROUND_COLOR = "#FDFAF5";
 // const GLOBAL_LINK_COLOR = "#105652";
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    color: #8d99ae;
+    color: ${Scheme.colors.purple.hex};
     text-align: justify;
     text-justify: inter-word;
     text-indent: 1.5rem;
@@ -94,7 +94,7 @@ const Layout = ({ children }) => {
       <GlobalStyle/>
       <LayoutContainerStyle>
         <LayoutStyle>
-          <Header/>
+          <Header />
             <main>{children}</main>
           <Footer/>
         </LayoutStyle>

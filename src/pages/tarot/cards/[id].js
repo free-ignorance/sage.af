@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Link } from 'gatsby';
-import Layout from '../../components/layout';
-import CardCollectionTiles from '../../components/cards/CardCollectionTiles';
-import SEO from '../../components/seo';
+import Layout from '../../../components/layout';
+import FullCardPage from '../../../components/cards/FullCardPage';
+import SEO from '../../../components/seo';
 
 const PreStyle = styled.div`
   margin: auto;
@@ -19,20 +19,20 @@ const PreStyle = styled.div`
     width: 36rem;
   }
 `;
-function CardsCollectionPage({ params }) {
+function CardsPage({ params }) {
   const id = params[`*`];
   return (
     <Layout>
       <SEO
-        title="Sage AF - Cards Collection Page"
-        description= "Card Collection Page"
+        title="Sage AF - Cards Page"
+        description= "Cards Page"
       />
       <PreStyle>
-        <CardCollectionTiles />
+        <FullCardPage id={id} />
         <p><br /></p>
       </PreStyle>
     </Layout>
   )
 }
 
-export default CardsCollectionPage
+export default CardsPage

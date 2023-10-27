@@ -2,10 +2,53 @@ const Scheme = {
   name: "sageaf",
   colors: {
     "blue": {
-      name: "Metallic Blue",
-      hex: "#2b5983"
+      name: "Heather",
+      hex: "#B8C3CC"
     },
-    "bluec": {
+    "lightblue": {
+      name: "Solitude",
+      hex: "#E6E7EB",
+    },
+    "red" : {
+      name: "Dark Salmon",
+      hex: "#e8977c",
+    },
+    "yellow": {
+      name: "Maize",
+      hex: "#e6b890",
+    },
+    "lightyellow": {
+      name: "Bridal Heath",
+      hex: "#f7eada",
+    },
+    "orange": {
+      name: "Flame",
+      hex: "#e85627",
+    },
+    "purple": {
+      name: "Purple Taupe",
+      hex: "#5C4854",
+    },
+    "green": {
+      name: "Green Sheen",
+      hex: "#67b9a9",
+    },
+    "black": {
+      name: "Dorado",
+      hex: "#696058",
+    },
+    "background": {
+      name: "Old Lace",
+      hex: "#FDF5E8",
+    },
+  }
+};
+
+
+const CyberScheme = {
+  name: "sageaf",
+  colors: {
+    "blue": {
       name: "Cyber Blue",
       hex: "#00b8ff",
     },
@@ -13,15 +56,11 @@ const Scheme = {
       name: "Rose Red",
       hex: "#b92056",
     },
-    "redc": {
+    "green": {
       name: "Cyber Red",
       hex: "#00ff9f",
     },
     "yellow": {
-      name: "Maximum Yellow",
-      hex: "#f0b54d",
-    },
-    "yellowc": {
       name: "Cyber Yellow",
       hex: "#FEFA03",
     },
@@ -37,7 +76,7 @@ const Scheme = {
       name: "Green Sheen",
       hex: "#67b9a9",
     },
-    "greenc": {
+    "green": {
       name: "Cyber Green",
       hex: "#07fb2f",
     },

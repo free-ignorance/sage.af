@@ -28,6 +28,8 @@ const AboutPage = () => (
     <PreStyle>
 			<h2>All About Us</h2>
 
+      <Link to='/tarot/about'>About Tarot</Link>
+
 			<p><br /></p>
 	  </PreStyle>
   </Layout>

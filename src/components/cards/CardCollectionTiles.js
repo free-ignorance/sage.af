@@ -51,13 +51,18 @@ class CardCollectionTiles extends Component {
     } else {
       return (
         <div display="flex">
-        {
-          items.map((item) => {
-              return <SingleCardTile image={item.image} />
-          })
-        }
+          {items.map((item) => {
+            return (
+              <SingleCardTile
+                id={item.id}
+                image={item.image}
+                name={item.name}
+                alt={item.alt}
+              />
+            );
+          })}
         </div>
-        );
+      );
     }
   }
 }

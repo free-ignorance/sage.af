@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
+import Scheme from "../style";
 
 const CardContainerStyle = styled.div`
-img {
+margin-top: -3rem;
 
-  border-radius: 5%;
-  object-fit: cover;
+p {
+  color: ${Scheme.colors.purple.hex};
 }
 
 h1, h2 {
   line-height: 0.5 rem;
-  color: #ffc300;
+  color: ${Scheme.colors.purple.hex};
   font-size: 3rem;
   font-family: "Spectral", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
   font-weight: 700;
@@ -23,6 +24,15 @@ h3 {
   line-height: 0.5 rem;
   margin-top: 0;
 }
+`;
+
+const CardImageStyle = styled.img`
+  width: 266px; 
+  height: 457px; 
+  border-radius: 5%;
+  object-fit: cover;
+  filter: drop-shadow(10px 5px 4px ${Scheme.colors.purple.hex});
+  border: 5px solid #1d1d1d;
 `;
 
 class FullCardPage extends Component {
@@ -80,7 +90,7 @@ class FullCardPage extends Component {
       <CardContainerStyle>
         <h2>{items.data.name}</h2>
         <h3>{items.data.type} arcana</h3>
-        <img src={items.data.cardImages[0].url.mid} alt=""/>
+        <CardImageStyle src={items.data.cardImages[0].url.mid} alt={items.data.cardImages[0].alt}/>
         <p>{items.data.description}</p>
 
       </CardContainerStyle>);
