@@ -5,6 +5,8 @@ import { Link } from 'gatsby';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
+import Spread from '../../components/cards/Spread'; 
+
 const PreStyle = styled.div`
   margin: auto;
   margin-bottom: 1rem;
@@ -27,9 +29,11 @@ const TarotPage = () => (
     />
     <PreStyle>
 			<h2>tarot</h2>
-
-
-			<p><br /></p>
+      
+      <p><br /></p>
+			
+      <Spread />
+      <p><br /></p>
 	  </PreStyle>
   </Layout>
 )

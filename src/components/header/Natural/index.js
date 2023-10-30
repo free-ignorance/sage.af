@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 import Scheme from "../../style";
 import Cloud from './Cloud';
+import Moon from './lunar/Moon';
 
 const HeaderContainerStyle = styled.div`
-  height: 156px;
-  top: 1px;
+  height: 256px;
+  margin-top: 1rem;
   text-align: center;
-  margin-bottom: -2rem;
 `;
 
 const NavContainerStyle = styled.div`
@@ -23,7 +23,6 @@ const NavContainerStyle = styled.div`
 const NavStyle = styled.nav`
   background: ${Scheme.colors.background.hex};
   margin: auto;
-  margin-top: 4rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -65,6 +64,7 @@ const NavStyle = styled.nav`
 
 const Header = () => (
    <HeaderContainerStyle>
+    <Moon />
     <NavContainerStyle>
       <Cloud />
       <NavStyle>
