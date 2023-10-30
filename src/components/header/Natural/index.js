@@ -11,6 +11,9 @@ const HeaderContainerStyle = styled.div`
   height: 256px;
   text-align: center;
   margin: auto;
+  background-image: url('https://i.ibb.co/smZLMxf/output-onlinepngtools-2-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const NavContainerStyle = styled.div`
@@ -64,9 +67,10 @@ const NavStyle = styled.nav`
 
 const Header = () => (
    <HeaderContainerStyle>
+    <br/>
     <Moon />
+    <br/>
     <NavContainerStyle>
-      <Cloud />
       <NavStyle>
         <ul>
           <li>
@@ -90,7 +94,6 @@ const Header = () => (
           </li>
         </ul>
       </NavStyle>
-      <Cloud />
     </NavContainerStyle>
    </HeaderContainerStyle>
 );

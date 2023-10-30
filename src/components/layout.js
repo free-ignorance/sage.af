@@ -24,7 +24,9 @@ const GLOBAL_TRINARY_ACCENT_COLOR = Scheme.colors.blue.hex;
 
 const GlobalStyle = createGlobalStyle`
   body {
+
     background-color: ${GLOBAL_BACKGROUND_COLOR};
+
   }
 
   p {
@@ -64,18 +66,23 @@ const GlobalStyle = createGlobalStyle`
 const LayoutContainerStyle = styled.div`
   width: 100%;
   font-family: "Spectral", Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, sans-serif;
-  background-color: ${GLOBAL_BACKGROUND_COLOR};
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
+  background-image: url('https://i.ibb.co/N3tXZtt/left.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
 `;
 
 const LayoutStyle = styled.div`
   width: 100%;
-  background-color: ${GLOBAL_BACKGROUND_COLOR};
+  height: 100%;
   font-size: 16px;
+  background-image: url('https://i.ibb.co/1mJb1PF/right.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
 `;
 
 const Layout = ({ children }) => {
