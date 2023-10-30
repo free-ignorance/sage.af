@@ -13,12 +13,7 @@ const PreStyle = styled.div`
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  max-witdh: 36rem;
 
-  @media only screen and (min-width: 768px) {
-    font-size: 16px;
-    width: 36rem;
-  }
 `;
 
 const TarotPage = () => (
@@ -30,10 +25,10 @@ const TarotPage = () => (
     <PreStyle>
 			<h2>tarot</h2>
       
-      <p><br /></p>
-			
       <Spread />
       <p><br /></p>
+      <Link to='/tarot/about'>Read more about Tarot</Link>
+      
 	  </PreStyle>
   </Layout>
 )
