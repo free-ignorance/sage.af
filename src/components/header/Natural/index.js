@@ -8,7 +8,7 @@ import Cloud from './Cloud';
 import Moon from './lunar/Moon';
 
 const HeaderContainerStyle = styled.div`
-  height: 256px;
+  height: 219px;
   text-align: center;
   margin: auto;
   background-image: url('https://i.ibb.co/smZLMxf/output-onlinepngtools-2-1.png');
