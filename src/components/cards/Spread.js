@@ -7,21 +7,20 @@ import Scheme from "../style";
 
 const CardSpreadContainerStyle = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 `;
 
 const CardContainerStyle = styled.div`
   display: inline-block;
   align-self: flex-end;
-  width: 256px;
+  max-width: 256px;
   padding-top: 2rem;
-  magin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: ${Scheme.colors.background.hex};
   border: 2px solid ${Scheme.colors.purple.hex};
   filter: drop-shadow(10px 5px 4px ${Scheme.colors.purple.hex});
