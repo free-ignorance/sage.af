@@ -8,6 +8,7 @@ import Scheme from "../../../style";
 // centered circle that will be the moon
 // it will show the current moon phase in cycle
 const LunarContainer = styled.div`
+  margin-top: 1rem;
   text-align: center;
   width: 128px;
   height: 128px;

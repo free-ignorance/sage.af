@@ -8,8 +8,6 @@ import Scheme from "../style";
 const CardSpreadContainerStyle = styled.div`
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
   margin-left: 10%;
   margin-right: 10%;
 `;

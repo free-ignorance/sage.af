@@ -9,15 +9,15 @@ import Moon from './lunar/Moon';
 
 const HeaderContainerStyle = styled.div`
   height: 256px;
-  margin-top: 1rem;
   text-align: center;
+  margin: auto;
 `;
 
 const NavContainerStyle = styled.div`
-  margin: auto;
-  width: 42%;
-  padding: 0.5rem;
   display: flex;
+  justify-content: space-around;
+  margin-left: 32%;
+  margin-right: 32%;
 `;
 
 const NavStyle = styled.nav`
