@@ -7,11 +7,13 @@ const pkjson = require("../../package.json");
 
 const FooterContainerStyle = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  height: 128px;
+  padding-top: 2rem;
   position: relative;
   text-align: center;
-  margin-bottom: 1rem;
-  text-align: center;
+  background-image: url('https://i.ibb.co/syrq9p7/clouds-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
 `;
 
 const FooterNavStyle = styled.footer`
@@ -20,7 +22,7 @@ const FooterNavStyle = styled.footer`
   color: ${Scheme.colors.purple.hex};
   line-height: 1.1 rem;
   margin: auto;
-  overflow: hidden;
+
 
   ul {
     margin: 0;
@@ -45,6 +47,8 @@ const FooterNavStyle = styled.footer`
     }
   }
 `;
+
+// 
 
 const StandOutFont = styled.span`
   font-family: 'Homemade Apple';

@@ -13,6 +13,7 @@ const PreStyle = styled.div`
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
+  background: none;
 
 `;
 

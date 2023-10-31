@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 
-import SEO from '../components/seo';
+import SEO from '../../components/seo';
 
 const PreStyle = styled.div`
   margin: auto;
@@ -28,7 +28,8 @@ const AboutPage = () => (
     <PreStyle>
 			<h2>All About Us</h2>
 
-      <Link to='/tarot/about'>About Tarot</Link>
+      <p><Link to='/tarot/about'>About Tarot</Link></p>
+      <p><Link to='/about/bot'>About Our Bots for Slack and Discord</Link></p>
 
 			<p><br /></p>
 	  </PreStyle>

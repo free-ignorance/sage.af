@@ -7,6 +7,12 @@ import Scheme from "../../../style";
 
 // centered circle that will be the moon
 // it will show the current moon phase in cycle
+const LunarFrame = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+
 const LunarContainer = styled.div`
   margin-top: 1rem;
   text-align: center;
@@ -129,7 +135,10 @@ const renderMoon = () => {
 
 const Moon = () => (
   <LunarContainer>
+    <LunarFrame>
     {renderMoon()} 
+
+    </LunarFrame>
   </LunarContainer>
 );
 

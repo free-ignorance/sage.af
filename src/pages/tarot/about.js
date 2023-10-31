@@ -27,7 +27,6 @@ const TarotPage = () => (
     />
     <PreStyle>
 			<h2>Frequently Asked Questions</h2>
-      
       <h3>what is tarot?</h3>
       <p>
       A tarot reading is a form of cartomancy, or divination, whereby practitioners use tarot cards to help self-reflect, connect with their inner self, meditate, and problem-solve. They formulate a subject or focus, sometimes an intent, then draw cards to interpret random meanings applied to the subject. Some suggest the practice can help to gain insight by applying random alturnative perspectives to an issue and the practitioner explores and reflects on their issue with a different set of eyes. Ultimately Tarot is a tool for self reflection and discovery. It is not a tool for predicting the future.
@@ -45,6 +44,14 @@ const TarotPage = () => (
       </p>
       <p>
         It is important to note that tarot readings are not meant to predict the future. Instead, they offer a snapshot of the present moment perspective from yourself to reflect on what meaning you draw at this current time. Even the same cards drawn two different times can have immensely different impact on someone depending their life sitiation. These resflections and discoveries help us define ourselfs and think of exturnal perspectives. The Person recieving a Tarot Reading is ultimately responsible for making their own choices and creating their own future.
+      </p>
+      <h3>Who is Pamela Colman Smith?</h3>
+      <p>
+        Pamela Colman Smith (16 February 1878 – 18 September 1951), also nicknamed Pixie, was a British artist, illustrator, writer and occultist. She is best known for illustrating the Smith-Rider-Waite tarot deck of divinatory tarot cards.
+      </p>
+      <h3>Who is A. E. Waite?</h3>
+      <p>
+        Arthur Edward Waite (2 October 1857 – 19 May 1942), commonly known as A. E. Waite, was an American-born British poet and scholarly mystic w
       </p>
 			<p><br /></p>
 	  </PreStyle>
