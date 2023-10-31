@@ -87,7 +87,7 @@ const Footer = () => (
   <FooterContainerStyle>
     <FooterNavStyle>
       <ul>
-        <li><a href="#">Terms of Use</a></li>
+        <li><Link to="/terms">Terms of Use</Link></li>
         <li><span>|</span></li>
         <li><a href="#">Sitemap</a></li>
         <li><span>|</span></li>

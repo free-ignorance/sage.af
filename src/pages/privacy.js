@@ -31,8 +31,67 @@ const PrivacyPage = () => (
     <PreStyle>
       <br/>
 			<h2>Your Privacy Matters</h2>
-			<p>We collect no personal data from our users except on account creation, and what we do collect, we delete after we ship items. The Collection of your data is entered into shopify system for shipping and tracking only. We are not a business that is accepting public orders at this time, and intend to destroy all customer generated accounts 30 days after orders have been completed and or by the Feb 20th 2022 Cutoff date. On Feb 20th 2022 all customer information and order information will be removed from the shop, and the shop will be reset. Our API transmits data oneway into shopify, and follows secure transport end to end. Our datapolicy is the <a href='https://www.patheos.com/blogs/wakeupcall/2017/07/sage-advice-from-the-14th-dalai-lama/'>don't be a jerk</a> policy.</p>
-			<p>Your Account and Data Can be deleted after signup at anypoint on our <Link to='/optout'>Delete Account Page</Link>, which will delete all customer information from the shopify shop, and remove your email from future promotions.</p>
+<p>
+This Privacy Policy explains how Sage AF collects, uses, and shares information about you when you visit our website.
+
+</p>
+<p>
+  Sort answer is we don't want to profit off of you, and don't want your personal information. You can keep it.
+</p>
+
+
+<h3>What information do we collect?</h3>
+
+<p>
+We do not collect any personal information from our users. Personal information is defined as any information that can be used to identify an individual, such as name, address, email address, phone number, or date of birth.
+</p>
+
+<h3>How do we share your information?</h3>
+
+
+<p>
+We do not share your information with any third parties.
+</p>
+
+
+<h3>Data Retention Policy</h3>
+
+<p>
+At Sage af, we respect your privacy and are committed to protecting your personal information. That is why we do not collect any personal data from our users.
+</p>
+<p>
+This means that we do not have any data to retain, and therefore, we do not have a data retention policy.
+</p>
+
+
+
+<h2>Security</h2>
+<p>
+We take appropriate security measures to protect your information from unauthorized access, use, or disclosure. However, no security measure is perfect, and we cannot guarantee that your information will never be accessed, used, or disclosed in a breach of our security.
+</p>
+
+<h2>Your choices</h2>
+<p>
+You have the right to opt out of receiving promotional emails or other communications from us. You can also request that we delete any information we have collected about you. To do so, please contact us at [email address].
+</p>
+
+<h2>Changes to this Privacy Policy</h2>
+<p>
+We may update this Privacy Policy from time to time. If we make any significant changes, we will post a notice on our website.
+</p>
+
+<h2>Contact us</h2>
+<p>
+If you have any questions about this Privacy Policy, please contact us at [email address].
+</p>
+
+<h2>Effective Date</h2>
+<p>
+This Privacy Policy is effective as of October 31st 2023.
+</p>
+
+
+
 		</PreStyle>
   </Layout>
 )
