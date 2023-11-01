@@ -99,7 +99,9 @@ const CardStyle = styled.div`
   width: 128px; 
   height: 223px; 
 
-  cursor: pointer;
+  .front {
+    cursor: pointer;
+  }
 
   img {
     filter: drop-shadow(10px 5px 4px ${Scheme.colors.purple.hex});
@@ -162,7 +164,6 @@ class SingleSpreadCard extends Component {
           <CardNameStyle> {this.state.flipped ? name : ""} </CardNameStyle>
           <CardDescriptionStyle> {this.state.flipped ? description : ""} </CardDescriptionStyle>
         </CardContainerStyle>
-
       );
   };
 }
