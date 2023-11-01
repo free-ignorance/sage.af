@@ -9,6 +9,8 @@ import Scheme from "../style";
 const cardback_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Waite%E2%80%93Smith_Tarot_Roses_and_Lilies_cropped.jpg/256px-Waite%E2%80%93Smith_Tarot_Roses_and_Lilies_cropped.jpg";
 const cardback_alt = "The original roses and lilies card back design from 1909";
 
+
+
 const CardContainerStyle = styled.div`
   display: inline-block;
   max-width: 256px;
@@ -20,6 +22,7 @@ const CardContainerStyle = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
   background: ${Scheme.colors.lightyellow.hex};
+
   clip-path: polygon(
     0 10%,
     10% 0,
@@ -31,12 +34,49 @@ const CardContainerStyle = styled.div`
     0% 90%,
     0% 10%
   );
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+`;
+
+const CardTypeStyle = styled.h1`
+  position: relative;
+  font-size: 1rem;
+  color: ${Scheme.colors.purple.hex};
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  z-index: 15;
 `;
 
 const CardNameStyle = styled.h1`
   position: relative;
   font-size: 1rem;
   color: ${Scheme.colors.purple.hex};
+  margin-top: 1rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   text-align: center;
@@ -53,13 +93,35 @@ const CardDescriptionStyle = styled.p`
   z-index: 15;
 `;
 
-const CardImageStyle = styled.img`  
+const CardStyle = styled.div`
+  position: relative;
+  margin: auto;
   width: 128px; 
   height: 223px; 
-  border-radius: 5%;
-  object-fit: cover;
-  border: 5px solid #1d1d1d;
-  filter: drop-shadow(10px 5px 4px ${Scheme.colors.purple.hex});
+
+  cursor: pointer;
+
+  img {
+    filter: drop-shadow(10px 5px 4px ${Scheme.colors.purple.hex});
+    border-radius: 5%;
+    border: 5px solid #1d1d1d;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+    transform: translateX(0%) rotateY(0deg);
+  }
+
+  .back {
+    transform: translateX(-100%) rotateY(180deg);
+  }
+`;
+
+const CardImageStyle = styled.img`  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  backface-visibility: hidden;
 `;
 
 class SingleSpreadCard extends Component {
@@ -79,34 +141,29 @@ class SingleSpreadCard extends Component {
     };
     this.render = this.render.bind(this);
     this.onClickFlip = this.onClickFlip.bind(this);
+    
   };
 
   onClickFlip() {
-    this.state.flipped = true;
-    this.setState(this.state);
+    this.setState({
+      flipped:true,
+    });
   }
 
   render() {
     const { flipped, type, name, description, image_src, image_alt } = this.state;
-    if(flipped) { 
-      return (
-        <CardContainerStyle >
-          <CardNameStyle>{type}</CardNameStyle>
-          <CardImageStyle src={image_src} alt={image_alt} />
-          <CardNameStyle> {name} </CardNameStyle>
-          <CardDescriptionStyle> {description} </CardDescriptionStyle>
-        </CardContainerStyle>
-      );
-    } else {
-      return (
+      return (        
         <CardContainerStyle>
-          <CardNameStyle>{type}</CardNameStyle>
-          <CardImageStyle src={cardback_src} alt={cardback_alt} onClick={this.onClickFlip} />
-          <CardNameStyle>  </CardNameStyle>
-          <CardDescriptionStyle>   </CardDescriptionStyle>
+          <CardTypeStyle>{type}</CardTypeStyle>
+          <CardStyle className="card" onClick={this.onClickFlip}>
+            <CardImageStyle className={this.state.flipped ? 'cardface back': 'cardface front'}  src={cardback_src} alt={cardback_alt}  />
+            <CardImageStyle className={this.state.flipped ? 'cardface front': 'cardface back'}  src={image_src} alt={image_alt} />
+          </CardStyle>
+          <CardNameStyle> {this.state.flipped ? name : ""} </CardNameStyle>
+          <CardDescriptionStyle> {this.state.flipped ? description : ""} </CardDescriptionStyle>
         </CardContainerStyle>
+
       );
-    }
   };
 }
 

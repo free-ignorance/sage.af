@@ -21,6 +21,7 @@ const PreStyle = styled.div`
   }
 `;
 
+
 const TarotPage = () => (
   <Layout>
 		<SEO
