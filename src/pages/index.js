@@ -24,6 +24,7 @@ margin-top: 1rem;
 
 .wrapper {
 	position: absolute;
+  top: 0;
   left: 0;
 	display: block;
 	width: 500px;
