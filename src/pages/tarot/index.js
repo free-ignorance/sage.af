@@ -13,8 +13,12 @@ const PreStyle = styled.div`
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  background: none;
+  max-witdh: 36rem;
 
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    max-witdh: 50%;
+  }
 `;
 
 const TarotPage = () => (
@@ -28,8 +32,10 @@ const TarotPage = () => (
       
       <Spread />
       <p><br /></p>
-      <Link to='/tarot/about'>Read more about Tarot</Link>
-      
+
+      <p> 
+        <Link to='/tarot/about'>Read more about Tarot</Link>
+      </p>
 	  </PreStyle>
   </Layout>
 )
