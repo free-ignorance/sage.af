@@ -9,8 +9,6 @@ import Scheme from "../style";
 const cardback_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Waite%E2%80%93Smith_Tarot_Roses_and_Lilies_cropped.jpg/256px-Waite%E2%80%93Smith_Tarot_Roses_and_Lilies_cropped.jpg";
 const cardback_alt = "The original roses and lilies card back design from 1909";
 
-
-
 const CardContainerStyle = styled.div`
   display: inline-block;
   max-width: 256px;
