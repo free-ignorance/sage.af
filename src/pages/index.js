@@ -7,7 +7,9 @@ import SEO from '../components/seo';
 import Scheme from "../components/style";
 
 
-const PreStyle = styled.div`
+
+const ViewPortWrapper = styled.div`
+margin-top: 1rem;
   text-align: center;
   width: 100%;
 	height: 600px;
@@ -19,9 +21,7 @@ const PreStyle = styled.div`
     font-size: 16px;
     width: 36rem;
   }
-`;
 
-const ViewPortWrapper = styled.div`
 .wrapper {
 	position: absolute;
   left: 0;
@@ -29,7 +29,6 @@ const ViewPortWrapper = styled.div`
 	width: 500px;
 	height: 500px;
 	margin: calc(50vh - 250px) calc(50vw - 250px);
-  transition:2s ease;
 }
 
 .arc:before, .arc:after {
@@ -77,13 +76,13 @@ const IndexPage = () => (
       title="Sage AF - Disrupting your Chakras"
       description="We are a Calm Cool Collective focusing on spiritual healing and wellness."
     />
-    <PreStyle>
+
     <ViewPortWrapper>
   <div class="wrapper">
     <div class="arc"><div class="arc"><div class="arc"><div class="arc"><div class="arc"><div class="arc"></div></div></div></div></div>
     </div></div>
   </ViewPortWrapper>
-    </PreStyle>
+
   </Layout>
 )
 
