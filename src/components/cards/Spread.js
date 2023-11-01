@@ -7,10 +7,15 @@ import Scheme from "../style";
 import SingleSpreadCard from "./SingleSpreadCard";
 
 const CardSpreadContainerStyle = styled.div`
-  display: flex;
-  justify-content: space-around;
+  display: block;
   margin-left: 10%;
   margin-right: 10%;
+
+  
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 

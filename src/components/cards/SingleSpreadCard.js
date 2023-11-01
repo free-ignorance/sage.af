@@ -23,6 +23,10 @@ const CardContainerStyle = styled.div`
   margin-right: 1rem;
   background: ${Scheme.colors.lightyellow.hex};
 
+  p { 
+    text-align: justify;
+  }
+
   clip-path: polygon(
     0 10%,
     10% 0,
@@ -85,11 +89,11 @@ const CardNameStyle = styled.h1`
 
 const CardDescriptionStyle = styled.p`
   position: relative;
+  text-align: justify;
   font-size: 0.8rem;
   color: ${Scheme.colors.purple.hex};
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  text-align: justify;
   z-index: 15;
 `;
 
